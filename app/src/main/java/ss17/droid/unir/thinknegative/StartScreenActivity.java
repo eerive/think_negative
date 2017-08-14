@@ -4,11 +4,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class StartScreenActivity extends AppCompatActivity {
-
-    private int testNumber;
-    private String TESTESTSET;
-    protected int schnitzel;
-    public int moreSchnitzels;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
