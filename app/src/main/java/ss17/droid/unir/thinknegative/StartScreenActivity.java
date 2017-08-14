@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 public class StartScreenActivity extends AppCompatActivity {
 
+    private int testNumber;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
