@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class StartScreenActivity extends AppCompatActivity {
+
+    private int test;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
