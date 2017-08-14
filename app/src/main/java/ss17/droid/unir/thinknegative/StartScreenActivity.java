@@ -5,10 +5,7 @@ import android.os.Bundle;
 
 public class StartScreenActivity extends AppCompatActivity {
 
-    private int testNumber;
-    private String TESTESTSET;
-    protected int schnitzel;
-    public int moreSchnitzels;
+    private int test;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
