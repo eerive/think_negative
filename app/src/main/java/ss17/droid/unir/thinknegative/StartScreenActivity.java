@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 public class StartScreenActivity extends AppCompatActivity {
 
+    private boolean bloed;
     private int testNumber;
     private String TESTESTSET;
     protected int schnitzel;
