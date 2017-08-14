@@ -8,7 +8,8 @@ public class StartScreenActivity extends AppCompatActivity {
     private int testNumber;
     private String TESTESTSET;
     protected int schnitzel;
-
+    public int moreSchnitzels;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
