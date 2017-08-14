@@ -6,6 +6,7 @@ import android.os.Bundle;
 public class StartScreenActivity extends AppCompatActivity {
 
     private int testNumber;
+    private String TESTESTSET;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
