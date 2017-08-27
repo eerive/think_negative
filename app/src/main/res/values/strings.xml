@@ -1,9 +1,6 @@
 <resources>
     <string name="app_name">Think Negative</string>
-    <string name="desc_1">
-        Dieser Screen beinhaltet . . .
-
-
-    </string>
-    <string name="skip">Skip</string>
+    <string name="desc_1">Dieser Screen beinhaltet . . . </string>
+    <string name="hint_what">Was ist passiert?</string>
+    <string name="save_button">Speichern</string>
 </resources>

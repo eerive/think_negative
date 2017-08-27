@@ -1,7 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+                android:background="@color/SandyBrown"
+              android:weightSum="1">
 
-</LinearLayout>
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/Brown"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+
+        <!--https://developer.android.com/training/appbar/setting-up.html
+        Für die Initialisierung der Toolbar in der Activity-->
+
+    <EditText
+        android:id="@+id/input_what"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:layout_weight="0.09"
+        android:hint="@string/hint_what"
+        android:inputType="text"
+        android:singleLine="false"
+        android:layout_below="@+id/my_toolbar"
+        android:layout_alignParentStart="true"/>
+
+    <Button
+        android:id="@+id/sendButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="19dp"
+        android:background="@color/DarkOrange"
+        android:text="@string/save_button"
+        android:textColor="@color/WhiteSmoke"/>
+
+</RelativeLayout>
