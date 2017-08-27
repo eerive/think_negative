@@ -27,7 +27,9 @@
             </intent-filter>
         </activity>
 
-
+        <activity android:name=".DefaultIntro"
+            android:label="Intro label"
+            android:theme="@style/FullscreenTheme" />
     </application>
 
 </manifest>
