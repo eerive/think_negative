@@ -11,8 +11,10 @@ public class StartScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start_screen);
+        setContentView(R.layout.input_mask);
 
+
+        // Init intro slide screen, only the first launch
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -20,7 +22,7 @@ public class StartScreenActivity extends AppCompatActivity {
                     if(sharedPreferences.getBoolean(Configuration.FLAG,true)){
 
                         startActivity(new Intent(StartScreenActivity.this,DefaultIntro.class));
-                        SharedPreferences.Editor e=sharedPreferences.edit();
+                        SharedPreferences.Editor e = sharedPreferences.edit();
                         e.putBoolean(Configuration.FLAG,false);
                         e.apply();
                     }
@@ -28,6 +30,9 @@ public class StartScreenActivity extends AppCompatActivity {
         });
         t.start();
 
+        //
+
 
     }
+
 }

@@ -47,4 +47,60 @@
         android:text="@string/save_button"
         android:textColor="@color/Honeydew"/>
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="?android:attr/actionModeCutDrawable"
+        android:layout_below="@+id/input_what"
+        android:layout_toStartOf="@+id/imageButton3" />
+
+    <ImageButton
+        android:id="@+id/imageButton9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input_what"
+        android:layout_toStartOf="@+id/imageButton3"
+        app:srcCompat="?android:attr/actionModeCutDrawable" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input_what"
+        android:layout_toStartOf="@+id/imageButton4"
+        app:srcCompat="?android:attr/actionModeCutDrawable" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/input_what"
+        app:srcCompat="?android:attr/actionModeCutDrawable" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="?android:attr/actionModeCutDrawable"
+        android:layout_below="@+id/input_what"
+        android:layout_toStartOf="@+id/imageButton" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="?android:attr/actionModeCutDrawable"
+        android:layout_below="@+id/input_what"
+        android:layout_toStartOf="@+id/imageButton10" />
+
+    <ImageButton
+        android:id="@+id/imageButton10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="?android:attr/actionModeCutDrawable"
+        android:layout_below="@+id/input_what"
+        android:layout_toStartOf="@+id/imageButton5" />
+
 </RelativeLayout>

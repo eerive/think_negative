@@ -10,24 +10,19 @@ import android.widget.Toast;
 
 import com.github.paolorotolo.appintro.AppIntro;
 
-import ss17.droid.unir.thinknegative.R;
-import ss17.droid.unir.thinknegative.SampleSlide;
-
 
 public final class DefaultIntro extends AppIntro {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//Down here, we add the xml layouts into sample slide inflater.
+        //Down here, we add the xml layouts into sample slide inflater.
         addSlide(SampleSlide.newInstance(R.layout.intro));
         addSlide(SampleSlide.newInstance(R.layout.intro2));
         addSlide(SampleSlide.newInstance(R.layout.intro3));
         addSlide(SampleSlide.newInstance(R.layout.intro4));
 
-
         showStatusBar(true);
-
         setDepthAnimation();
 
     }
@@ -35,8 +30,8 @@ public final class DefaultIntro extends AppIntro {
     @Override
     public void onDonePressed(Fragment currentFragment) {
         super.onDonePressed(currentFragment);
-
         loadMainActivity();
+        finish();
     }
 
     private void loadMainActivity(){
@@ -49,9 +44,10 @@ public final class DefaultIntro extends AppIntro {
         super.onSkipPressed(currentFragment);
         loadMainActivity();
         Toast.makeText(getApplicationContext(), getString(R.string.skip), Toast.LENGTH_SHORT).show();
+        finish();
     }
 
-    public void getStarted(View v){
-        loadMainActivity();
-    }
+   // public void getStarted(View v){
+   //     loadMainActivity();
+   // }
 }
