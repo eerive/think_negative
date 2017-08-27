@@ -14,6 +14,13 @@
     <color name="Flame">#E55934</color>
     <color name="PrincetonOrange">#FA7921</color>
 
+    <!-- palette -->
+    <color name="SeaBlue">#05668D</color>
+    <color name="MetallicSeaweed">#028090</color>
+    <color name="PersianGreen">#00A896</color>
+    <color name="CaribeenGreen">#02C39A</color>
+    <color name="PaleBud">#F0F3BD</color>
+
 
 
     <color name="FloralWhite">#FFFAF0</color>
