@@ -8,11 +8,14 @@
     added colors from stackoverflow:
     https://stackoverflow.com/questions/3769762/web-colors-in-an-android-color-xml-resource-file
     -->
-    <color name="White">#FFFFFF</color>
-    <color name="Ivory">#FFFFF0</color>
-    <color name="LightYellow">#FFFFE0</color>
-    <color name="Yellow">#FFFF00</color>
-    <color name="Snow">#FFFAFA</color>
+    <color name="BlueJeans">#5BC0EB</color>
+    <color name="GargoyleGas">#FDE74C</color>
+    <color name="AndroidGreen">#9BC53D</color>
+    <color name="Flame">#E55934</color>
+    <color name="PrincetonOrange">#FA7921</color>
+
+
+
     <color name="FloralWhite">#FFFAF0</color>
     <color name="LemonChiffon">#FFFACD</color>
     <color name="Cornsilk">#FFF8DC</color>
