@@ -92,8 +92,7 @@
                 android:backgroundTint="@android:color/transparent"
                 android:scaleType="fitCenter"
                 app:srcCompat="@mipmap/ic_haufen"
-                android:layout_align="@id/button_unicorn"
-                android:layout_marginStart="11dp"
+                android:layout_marginStart="18dp"
                 android:layout_below="@+id/input_what"
                 android:layout_alignParentStart="true"/>
 
@@ -118,6 +117,17 @@
                 app:srcCompat="@mipmap/ic_bat"
                 android:layout_alignTop="@+id/button_penguin"
                 android:layout_toEndOf="@+id/button_penguin"/>
+
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_above="@+id/sendButton"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="40dp"
+                android:background="@color/Gainsboro"
+                app:srcCompat="@android:drawable/ic_menu_camera"/>
 
 
         </RelativeLayout>
