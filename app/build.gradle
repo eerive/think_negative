@@ -5,7 +5,7 @@ android {
     buildToolsVersion "26.0.0"
     defaultConfig {
         applicationId "ss17.droid.unir.thinknegative"
-        minSdkVersion 19
+        minSdkVersion 24
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -20,6 +20,8 @@ android {
     lintOptions {
         disable 'GoogleAppIndexingWarning'
         baseline file("lint-baseline.xml")
+    }
+    productFlavors {
     }
 }
 
