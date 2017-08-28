@@ -1,9 +1,12 @@
 package ss17.droid.unir.thinknegative;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
 
 /**
  * Created by Anne on 28.08.2017.
@@ -44,18 +47,26 @@ public class NegativeDatabase {
         }
     }
 
-    public long insertEntry() {
-        //Anfang blödsinniger Code
-        long numb = 1;
-        return numb;
-        //Ende blödsinniger Code
+    public long insertEntry(Entry entry) {
+        ContentValues myEntryValues = new ContentValues();
+        myEntryValues.put(KEY_DATE, entry.getFormattedDate());
+        myEntryValues.put(KEY_RATING, entry.getRating());
+        myEntryValues.put(KEY_TEXT, entry.getText());
+        myEntryValues.put(KEY_FOTOPATH, entry.getFotopath());
+        return db.insert(DATABASE_TABLE, null, myEntryValues);
     }
 
     public void deleteEntry() {
         //mach den Eintrag weg!
+        //woran soll der identifiziert werden?
+
     }
 
-    //public ArrayList<Entry> showAllOfCertainDay () {}         //alle eines bestimmten Tages
+    //alle Einträge eines bestimmten Tages
+    public ArrayList<Entry> showAllOfCertainDay (ArrayList<Entry> entryList) {
+
+        return entryList;
+    }
 
     private class NegativeDBOpenHelper extends SQLiteOpenHelper {
         private static final String DATABASE_CREATE = "create table "
