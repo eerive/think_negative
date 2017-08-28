@@ -51,51 +51,74 @@
             android:layout_alignParentStart="true"/>
 
             <ImageButton
-                android:id="@+id/cow"
-                android:layout_width="@android:dimen/app_icon_size"
-                android:layout_height="wrap_content"
-
+                android:id="@+id/button_cow"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@mipmap/ic_kuh"
                 android:backgroundTint="@android:color/transparent"
+                android:elevation="0dp"
+                android:scaleType="fitCenter"
                 app:srcCompat="@mipmap/ic_kuh"
-                android:layout_marginStart="34dp"
+                android:layout_below="@+id/input_what"
+                android:layout_toEndOf="@+id/button_unicorn"/>
+
+            <ImageButton
+                android:id="@+id/button_explosion"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@mipmap/ic_atompilz"
+                android:backgroundTint="@android:color/transparent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_atompilz"
+                android:layout_below="@+id/input_what"
+                android:layout_toEndOf="@+id/imageButton7"/>
+
+            <ImageButton
+                android:id="@+id/button_penguin"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@mipmap/ic_pinguin"
+                android:backgroundTint="@android:color/transparent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_pinguin"
+                android:layout_alignTop="@+id/button_cow"
+                android:layout_toEndOf="@+id/button_cow"/>
+
+            <ImageButton
+                android:id="@+id/button_shit"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@mipmap/ic_haufen"
+                android:backgroundTint="@android:color/transparent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_haufen"
+                android:layout_align="@id/button_unicorn"
+                android:layout_marginStart="11dp"
                 android:layout_below="@+id/input_what"
                 android:layout_alignParentStart="true"/>
 
             <ImageButton
-                android:id="@+id/explosion"
-                android:layout_width="@android:dimen/app_icon_size"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/input_what"
-                android:layout_toEndOf="@+id/cow"
+                android:id="@+id/button_unicorn"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@mipmap/ic_unicorn"
                 android:backgroundTint="@android:color/transparent"
-                app:srcCompat="@mipmap/ic_atompilz"/>
-
-            <ImageButton
-                android:id="@+id/penguin"
-                android:layout_width="@android:dimen/app_icon_size"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/input_what"
-                android:layout_toEndOf="@+id/explosion"
-                android:backgroundTint="@android:color/transparent"
-                app:srcCompat="@mipmap/ic_pinguin"/>
-
-            <ImageButton
-                android:id="@+id/imageButton5"
-                android:layout_width="@android:dimen/app_icon_size"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/input_what"
-                android:layout_toEndOf="@+id/penguin"
-                android:backgroundTint="@android:color/transparent"
-                app:srcCompat="@mipmap/ic_haufen"/>
-
-            <ImageButton
-                android:id="@+id/imageButton6"
-                android:layout_width="@android:dimen/app_icon_size"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@android:color/transparent"
+                android:scaleType="fitCenter"
                 app:srcCompat="@mipmap/ic_unicorn"
                 android:layout_below="@+id/input_what"
-                android:layout_toEndOf="@+id/imageButton5" />
+                android:layout_toEndOf="@+id/button_shit"/>
+
+            <ImageButton
+                android:id="@+id/imageButton7"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@mipmap/ic_bat"
+                android:backgroundTint="@android:color/transparent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_bat"
+                android:layout_alignTop="@+id/button_penguin"
+                android:layout_toEndOf="@+id/button_penguin"/>
+
 
         </RelativeLayout>
 
