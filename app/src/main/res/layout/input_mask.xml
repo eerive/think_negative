@@ -69,7 +69,7 @@
                 android:scaleType="fitCenter"
                 app:srcCompat="@mipmap/ic_atompilz"
                 android:layout_below="@+id/input_what"
-                android:layout_toEndOf="@+id/imageButton7"/>
+                android:layout_toEndOf="@+id/button_bat"/>
 
             <ImageButton
                 android:id="@+id/button_penguin"
@@ -107,7 +107,7 @@
                 android:layout_toEndOf="@+id/button_shit"/>
 
             <ImageButton
-                android:id="@+id/imageButton7"
+                android:id="@+id/button_bat"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:background="@mipmap/ic_bat"
