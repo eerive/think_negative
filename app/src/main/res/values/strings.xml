@@ -1,18 +1,20 @@
 <resources>
     <string name="app_name">Think Negative</string>
-    <string name="desc_1">Dieser Screen beinhaltet . . . </string>
+
+
+
+
     <string name="hint_what">Was ist passiert?</string>
     <string name="save_button">Speichern</string>
     <string name="skip">Skip</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
-    <string name="title_activity_main_v1">MainActivityV1</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="log_out">Log Out</string>
     <string name="nav_settings">Settings</string>
-    <string name="test_account">Test Account</string>
+    <string name="to_calendar">Calendar</string>
+    <string name="nav_header_content">HEADER</string>
 </resources>

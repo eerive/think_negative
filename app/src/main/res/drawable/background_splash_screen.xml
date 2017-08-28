@@ -10,8 +10,8 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@mipmap/ic_atompilz"
+            android:src="@drawable/launcher_icon_big"
             />
     </item>
-
+    <!-- Das Bild ist absichtlich so groß.-->
 </layer-list>
