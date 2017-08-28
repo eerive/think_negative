@@ -72,7 +72,7 @@
     <color name="LightCyan">#E0FFFF</color>
     <color name="BurlyWood">#DEB887</color>
     <color name="Plum">#DDA0DD</color>
-    <color name="Gainsboro">#DCDCDC</color>
+    <color name="Gainsboro">#dcdcdc</color>
     <color name="Crimson">#DC143C</color>
     <color name="PaleVioletRed">#DB7093</color>
     <color name="Goldenrod">#DAA520</color>
