@@ -8,8 +8,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 
 public class StartScreenActivity extends AppCompatActivity {
@@ -35,7 +33,7 @@ public class StartScreenActivity extends AppCompatActivity {
                 SharedPreferences sharedPreferences = getSharedPreferences(Configuration.FLAG, Context.MODE_PRIVATE);
                     if(sharedPreferences.getBoolean(Configuration.FLAG,true)){
 
-                        startActivity(new Intent(StartScreenActivity.this,DefaultIntro.class));
+                        startActivity(new Intent(StartScreenActivity.this,DefaultIntroActivity.class));
                         SharedPreferences.Editor e = sharedPreferences.edit();
                         e.putBoolean(Configuration.FLAG,false);
                         e.apply();

@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.github.paolorotolo.appintro.AppIntro;
 
 
-public final class DefaultIntro extends AppIntro {
+public final class DefaultIntroActivity extends AppIntro {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
