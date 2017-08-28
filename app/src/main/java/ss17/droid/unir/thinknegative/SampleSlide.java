@@ -15,7 +15,6 @@ public class SampleSlide extends Fragment {
 
     public static SampleSlide newInstance(int layoutResId) {
         SampleSlide sampleSlide = new SampleSlide();
-
         Bundle args = new Bundle();
         args.putInt(ARG_LAYOUT_RES_ID, layoutResId);
         sampleSlide.setArguments(args);

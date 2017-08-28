@@ -8,6 +8,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 
 public class StartScreenActivity extends AppCompatActivity {
@@ -20,6 +22,12 @@ public class StartScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.input_mask);
+
+        //Toolbar
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
+        //
+        //---------------END TOOLBAR----------------------------------------------------------------
         // Init intro slide screen, only the first launch
         Thread t = new Thread(new Runnable() {
             @Override
@@ -49,5 +57,16 @@ public class StartScreenActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
         //--------------END ACTIONBAR---------------------------------------------------------------
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+
+        if(mToggle.onOptionsItemSelected(item))
+            return true;
+
+        return super.onOptionsItemSelected(item);
+
     }
 }

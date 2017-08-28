@@ -2,9 +2,9 @@
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/DarkCyan</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/MetallicSeaweed</item>
+        <item name="colorPrimaryDark">@color/SeaBlue</item>
+        <item name="colorAccent">@color/WhiteSmoke</item>
     </style>
 
     <!--SPLASH SCREEN-->
@@ -13,7 +13,6 @@
     </style>
 
     <style name="FullscreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="android:windowTranslucentStatus">true</item>
     </style>
 
