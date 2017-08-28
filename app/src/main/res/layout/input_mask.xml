@@ -17,17 +17,7 @@
             android:background="@color/WhiteSmoke"
             android:weightSum="1">
 
-        <ImageButton
-            android:id="@+id/imageButton22"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/input_what"
-            android:layout_marginStart="135dp"
-            android:layout_marginTop="44dp"
-            app:srcCompat="@android:drawable/btn_star_big_on" />
-
-        <!-- https://www.youtube.com/watch?v=bmeSXhAtDDk  (set title)-->
+            <!-- https://www.youtube.com/watch?v=bmeSXhAtDDk  (set title)-->
 
 
                 <!--https://developer.android.com/training/appbar/setting-up.html
@@ -37,12 +27,13 @@
             android:id="@+id/input_what"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="22dp"
-
+            android:layout_marginTop="16dp"
+            android:textAlignment="center"
             android:hint="@string/hint_what"
             android:inputType="textMultiLine"
-            android:maxLines="3"/>
+            android:maxLines="3"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"/>
 
                 <!--android:layout_below="@+id/my_toolbar"
                         android:layout_weight="0.09"-->
@@ -54,68 +45,57 @@
             android:layout_gravity="center_horizontal"
             android:background="@color/MetallicSeaweed"
             android:text="@string/save_button"
-            android:textColor="@color/PaleBud"
+            android:textColor="@color/WhiteSmoke"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"/>
 
-        <ImageButton
-            android:id="@+id/imageButton20"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/btn_star_big_on"
-            android:layout_alignTop="@+id/imageButton24"
-            android:layout_toEndOf="@+id/imageButton24" />
+            <ImageButton
+                android:id="@+id/cow"
+                android:layout_width="@android:dimen/app_icon_size"
+                android:layout_height="wrap_content"
 
-        <ImageButton
-            android:id="@+id/imageButton26"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/imageButton25"
-            android:layout_toStartOf="@+id/imageButton25"
-            app:srcCompat="@android:drawable/btn_star_big_on" />
+                android:backgroundTint="@android:color/transparent"
+                app:srcCompat="@mipmap/ic_kuh"
+                android:layout_marginStart="34dp"
+                android:layout_below="@+id/input_what"
+                android:layout_alignParentStart="true"/>
 
-        <ImageButton
-            android:id="@+id/imageButton25"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/imageButton22"
-            android:layout_marginEnd="57dp"
-            android:layout_toStartOf="@+id/imageButton23"
-            app:srcCompat="@android:drawable/btn_star_big_on" />
+            <ImageButton
+                android:id="@+id/explosion"
+                android:layout_width="@android:dimen/app_icon_size"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_what"
+                android:layout_toEndOf="@+id/cow"
+                android:backgroundTint="@android:color/transparent"
+                app:srcCompat="@mipmap/ic_atompilz"/>
 
-        <ImageButton
-            android:id="@+id/imageButton24"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/imageButton23"
-            android:layout_toEndOf="@+id/imageButton23"
-            app:srcCompat="@android:drawable/btn_star_big_on" />
+            <ImageButton
+                android:id="@+id/penguin"
+                android:layout_width="@android:dimen/app_icon_size"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_what"
+                android:layout_toEndOf="@+id/explosion"
+                android:backgroundTint="@android:color/transparent"
+                app:srcCompat="@mipmap/ic_pinguin"/>
 
-        <ImageButton
-            android:id="@+id/imageButton23"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/imageButton22"
-            android:layout_toEndOf="@+id/imageButton22"
-            app:srcCompat="@android:drawable/btn_star_big_on" />
+            <ImageButton
+                android:id="@+id/imageButton5"
+                android:layout_width="@android:dimen/app_icon_size"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_what"
+                android:layout_toEndOf="@+id/penguin"
+                android:backgroundTint="@android:color/transparent"
+                app:srcCompat="@mipmap/ic_haufen"/>
 
-        <ImageButton
-            android:id="@+id/imageButton27"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_menu_camera"
-            android:layout_below="@+id/imageButton22"
-            android:layout_centerHorizontal="true"  />
+            <ImageButton
+                android:id="@+id/imageButton6"
+                android:layout_width="@android:dimen/app_icon_size"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_what"
+                android:layout_toEndOf="@+id/imageButton5"
+                android:backgroundTint="@android:color/transparent"
+                app:srcCompat="@mipmap/ic_unicorn"/>
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/imageButton27"
-            app:srcCompat="@android:drawable/gallery_thumb"
-            android:layout_above="@+id/sendButton" />
         </RelativeLayout>
 
 
