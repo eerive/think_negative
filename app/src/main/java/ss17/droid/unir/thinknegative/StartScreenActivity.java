@@ -1,17 +1,26 @@
 package ss17.droid.unir.thinknegative;
 
+import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
+import android.view.View.OnClickListener;
 
-public class StartScreenActivity extends AppCompatActivity {
+public class StartScreenActivity extends AppCompatActivity implements OnClickListener {
 
 
     private DrawerLayout mDrawerLayout;
@@ -23,27 +32,27 @@ public class StartScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.input_mask);
 
-        //Toolbar
-        mToolbar = (Toolbar) findViewById(R.id.nav_action);
-        setSupportActionBar(mToolbar);
-        //
-        //---------------END TOOLBAR----------------------------------------------------------------
         // Init intro slide screen, only the first launch
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
                 SharedPreferences sharedPreferences = getSharedPreferences(Configuration.FLAG, Context.MODE_PRIVATE);
-                    if(sharedPreferences.getBoolean(Configuration.FLAG,true)){
+                if(sharedPreferences.getBoolean(Configuration.FLAG,true)){
 
-                        startActivity(new Intent(StartScreenActivity.this,DefaultIntroActivity.class));
-                        SharedPreferences.Editor e = sharedPreferences.edit();
-                        e.putBoolean(Configuration.FLAG,false);
-                        e.apply();
-                    }
+                    startActivity(new Intent(StartScreenActivity.this,DefaultIntroActivity.class));
+                    SharedPreferences.Editor e = sharedPreferences.edit();
+                    e.putBoolean(Configuration.FLAG,false);
+                    e.apply();
+                }
             }
         });
         t.start();
         //---------------END INTRO------------------------------------------------------------------
+        //Toolbar
+        mToolbar = (Toolbar) findViewById(R.id.nav_action);
+        setSupportActionBar(mToolbar);
+        //
+        //---------------END TOOLBAR----------------------------------------------------------------
         //incomplete ActionBar
         //tut:https://www.youtube.com/watch?v=AS92bq3XxkA
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
@@ -55,18 +64,40 @@ public class StartScreenActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         if(actionBar!=null){
             actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setDisplayUseLogoEnabled(true);
         }
         //--------------END ACTIONBAR---------------------------------------------------------------
+        //NavigationView handler
+        NavigationView nv = (NavigationView)findViewById(R.id.navigator);
+        nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch(item.getItemId()){
+                    case(R.id.home):
+                        mDrawerLayout.closeDrawers();
+                        break;
+                    case(R.id.nav_imprint):
+                        Intent i1 = new Intent(getApplicationContext(),ImprintScreenActivity.class);
+                        startActivity(i1);
+                        break;
+                    case(R.id.to_calendar):
+                        Toast.makeText(getApplicationContext(),"NOT IMPLEMENTED YET",Toast.LENGTH_SHORT)
+                                .show();
+                        break;
+                }
+                return true;
+            }
+        });
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return mToggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
+    }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-
-        if(mToggle.onOptionsItemSelected(item))
-            return true;
-
-        return super.onOptionsItemSelected(item);
+    public void onClick(View view) {
 
     }
 }
+
