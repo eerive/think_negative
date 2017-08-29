@@ -9,22 +9,22 @@ import android.view.ViewGroup;
 
 
 //https://www.simplifiedcoding.net/intro-screen-slider-android-tutorial/
-public class SampleSlide extends Fragment {
+public class IntroSlideFragment extends Fragment {
 
     private static final String ARG_LAYOUT_RES_ID = "layoutResId";
 
-    public static SampleSlide newInstance(int layoutResId) {
-        SampleSlide sampleSlide = new SampleSlide();
+    public static IntroSlideFragment newInstance(int layoutResId) {
+        IntroSlideFragment introSlideFragment = new IntroSlideFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_LAYOUT_RES_ID, layoutResId);
-        sampleSlide.setArguments(args);
+        introSlideFragment.setArguments(args);
 
-        return sampleSlide;
+        return introSlideFragment;
     }
 
     private int layoutResId;
 
-    public SampleSlide() {}
+    public IntroSlideFragment() {}
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
