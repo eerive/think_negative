@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -14,12 +15,14 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 /**
  * <empty>
  */
 public class ActivityStartScreen extends AppCompatActivity  {
 
+    private boolean doubleBackToExit = false;
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
@@ -130,6 +133,23 @@ public class ActivityStartScreen extends AppCompatActivity  {
     public boolean onOptionsItemSelected(MenuItem item) {
         //Use for Hamburger Button
         return mToggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed(){
+        if(doubleBackToExit){
+            super.onBackPressed();
+            return;
+        }
+        this.doubleBackToExit = true;
+        Toast.makeText(this,"Press again to exit.",Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doubleBackToExit=false;
+            }
+        },2000); //Disable double press exit after 2 seconds
     }
 
 

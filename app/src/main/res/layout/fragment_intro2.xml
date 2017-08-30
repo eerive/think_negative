@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00BCD4"
+    android:background="@color/MetallicSeaweed"
     android:layout_weight="10"
     android:id="@+id/main">
 
@@ -17,7 +17,7 @@
         android:textColor="#ffffff"
         android:paddingRight="32dp"
         android:textSize="28sp"
-        android:text="Slide 2 title"/>
+        android:text="@string/fm_intro2_title"/>
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -44,7 +44,7 @@
         android:paddingLeft="64dp"
         android:paddingRight="64dp"
         android:textSize="16sp"
-        android:text="Long description here"/>
+        android:text="@string/long_description_here"/>
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="64dp" />

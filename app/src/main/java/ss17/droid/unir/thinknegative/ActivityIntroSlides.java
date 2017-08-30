@@ -1,19 +1,21 @@
 package ss17.droid.unir.thinknegative;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.Toast;
 
-// TODO: insert github link for this repository
-import com.github.paolorotolo.appintro.AppIntro;
+// https://github.com/apl-devs/AppIntro
+import com.github.paolorotolo.appintro.AppIntro2;
 
 
-public final class ActivityIntroSlides extends AppIntro {
+public final class ActivityIntroSlides extends AppIntro2 {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         //Adding fragment slides
@@ -24,6 +26,13 @@ public final class ActivityIntroSlides extends AppIntro {
 
         showStatusBar(true);
         setDepthAnimation();
+        showSkipButton(false);
+
+        //Mehr permissions? Im Manifest hinzufügen und hier abfragen :)
+        askForPermissions(new String[]{
+                Manifest.permission.CAMERA,
+                Manifest.permission.READ_EXTERNAL_STORAGE
+        },3);
 
     }
 
@@ -34,13 +43,6 @@ public final class ActivityIntroSlides extends AppIntro {
         finish();
     }
 
-    @Override
-    public void onSkipPressed(Fragment currentFragment) {
-        super.onSkipPressed(currentFragment);
-        loadMainActivity();
-        Toast.makeText(getApplicationContext(), getString(R.string.skip), Toast.LENGTH_SHORT).show();
-        finish();
-    }
 
     private void loadMainActivity(){
         Intent intent = new Intent(this, ActivityStartScreen.class);

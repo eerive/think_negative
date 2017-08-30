@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    android:background="@color/BlueJeans"
+    android:background="@color/SeaBlue"
     android:layout_weight="10"
     android:id="@+id/main">
 
@@ -18,7 +18,7 @@
         android:textColor="#ffffff"
         android:paddingRight="32dp"
         android:textSize="28sp"
-        android:text="This is the first slide"/>
+        android:text="@string/fm_intro1_title"/>
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -44,7 +44,7 @@
         android:paddingLeft="64dp"
         android:paddingRight="64dp"
         android:textSize="16sp"
-        android:text="Schnitzel mit Pommes"/>
+        android:text="@string/fm_intro1_body"/>
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="64dp" />

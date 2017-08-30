@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4CAF50"
+    android:background="@color/CaribeenGreen"
     android:layout_weight="10"
     android:id="@+id/main">
 
@@ -13,11 +13,11 @@
         android:gravity="center"
         android:paddingLeft="32dp"
         android:layout_weight="3"
-        android:fontFamily="sans-serif-thin"
+        android:fontFamily="sans-serif"
         android:textColor="#ffffff"
         android:paddingRight="32dp"
         android:textSize="28sp"
-        android:text="Slide 4 title"/>
+        android:text="Vielen Dank für dein Vertrauen!"/>
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -32,7 +32,9 @@
             android:layout_gravity="center"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:src="@drawable/ic_slide4"/>
+            android:onClick="getStarted"
+            android:src="@drawable/ic_intro4_accept"/>
+        <!-- http://www.myiconfinder.com/icon/accept-business-check-checkmark-comleted-done-okey-ok-tick-agree-approved/8806#.256 -->
     </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
@@ -43,11 +45,12 @@
         android:textColor="#ffffff"
         android:paddingLeft="64dp"
         android:paddingRight="64dp"
-        android:textSize="16sp"
+        android:textSize="24sp"
         android:textStyle="bold"
-        android:onClick="getStarted"
-        android:text="GET STARTED"/>
+        android:text="Tippe auf den Pfeil, um zu starten!"/>
+    <!--
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="64dp" />
+    -->
 </LinearLayout>
