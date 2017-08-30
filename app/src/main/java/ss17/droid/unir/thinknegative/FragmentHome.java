@@ -14,7 +14,7 @@ import android.widget.ImageView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment {
+public class FragmentHome extends Fragment {
 
     private ImageButton mUnicornButton;
     private ImageButton mBaseballbatButton;
@@ -27,7 +27,7 @@ public class HomeFragment extends Fragment {
 
     private ImageView mImageView;
 
-    public HomeFragment() {
+    public FragmentHome() {
         // Required empty public constructor
     }
 

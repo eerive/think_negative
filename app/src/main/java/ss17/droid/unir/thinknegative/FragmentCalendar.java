@@ -7,10 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * Created by Duc on 30/08/2017.
+ * empty
  */
 
-public class CalendarScreenFragment extends Fragment {
+public class FragmentCalendar extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

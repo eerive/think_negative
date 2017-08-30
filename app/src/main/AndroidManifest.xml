@@ -9,24 +9,25 @@
         android:roundIcon="@mipmap/ic_atompilz_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StartScreenActivity">
+
+        <activity android:name=".ActivityStartScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".ActivitySplashScreen"
             android:theme="@style/SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".DefaultIntroActivity"
+            android:name=".ActivityIntroSlides"
             android:label="Intro label"
             android:theme="@style/FullscreenTheme" />
     </application>

@@ -10,17 +10,17 @@ import android.widget.Toast;
 import com.github.paolorotolo.appintro.AppIntro;
 
 
-public final class DefaultIntroActivity extends AppIntro {
+public final class ActivityIntroSlides extends AppIntro {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         //Adding fragment slides
-        addSlide(IntroSlideFragment.newInstance(R.layout.intro1));
-        addSlide(IntroSlideFragment.newInstance(R.layout.intro2));
-        addSlide(IntroSlideFragment.newInstance(R.layout.intro3));
-        addSlide(IntroSlideFragment.newInstance(R.layout.intro4));
+        addSlide(FragmentIntroSlide.newInstance(R.layout.fragment_intro1));
+        addSlide(FragmentIntroSlide.newInstance(R.layout.fragment_intro2));
+        addSlide(FragmentIntroSlide.newInstance(R.layout.fragment_intro3));
+        addSlide(FragmentIntroSlide.newInstance(R.layout.fragment_intro4));
 
         showStatusBar(true);
         setDepthAnimation();
@@ -34,11 +34,6 @@ public final class DefaultIntroActivity extends AppIntro {
         finish();
     }
 
-    private void loadMainActivity(){
-        Intent intent = new Intent(this, StartScreenActivity.class);
-        startActivity(intent);
-    }
-
     @Override
     public void onSkipPressed(Fragment currentFragment) {
         super.onSkipPressed(currentFragment);
@@ -47,7 +42,13 @@ public final class DefaultIntroActivity extends AppIntro {
         finish();
     }
 
+    private void loadMainActivity(){
+        Intent intent = new Intent(this, ActivityStartScreen.class);
+        startActivity(intent);
+    }
+
     public void getStarted(View v){
+        //TODO: remove or add something more...
         loadMainActivity();
         finish();
     }

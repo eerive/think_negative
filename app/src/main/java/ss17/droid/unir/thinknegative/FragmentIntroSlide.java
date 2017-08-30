@@ -8,23 +8,23 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-//https://www.simplifiedcoding.net/intro-screen-slider-android-tutorial/
-public class IntroSlideFragment extends Fragment {
+//SOURCE:https://www.simplifiedcoding.net/intro-screen-slider-android-tutorial/
+public class FragmentIntroSlide extends Fragment {
 
     private static final String ARG_LAYOUT_RES_ID = "layoutResId";
     private int layoutResId;
 
-    public static IntroSlideFragment newInstance(int layoutResId) {
-        IntroSlideFragment introSlideFragment = new IntroSlideFragment();
-        Bundle args = new Bundle();
-        args.putInt(ARG_LAYOUT_RES_ID, layoutResId);
-        introSlideFragment.setArguments(args);
-
-        return introSlideFragment;
+    public FragmentIntroSlide() {
+        //empty on purpose
     }
 
-
-    public IntroSlideFragment() {}
+    public static FragmentIntroSlide newInstance(int layoutResId) {
+        FragmentIntroSlide fragmentIntroSlide = new FragmentIntroSlide();
+        Bundle args = new Bundle();
+        args.putInt(ARG_LAYOUT_RES_ID, layoutResId);
+        fragmentIntroSlide.setArguments(args);
+        return fragmentIntroSlide;
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

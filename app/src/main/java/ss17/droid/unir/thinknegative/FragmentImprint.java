@@ -17,7 +17,7 @@ import android.widget.Button;
  *
  */
 
-public class ImprintScreenFragment extends Fragment {
+public class FragmentImprint extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

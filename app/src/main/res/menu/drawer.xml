@@ -10,12 +10,9 @@
         android:title="@string/to_calendar"
         android:icon="@mipmap/ic_timeline_black_24dp"
         />
-
     <item
         android:id="@+id/nav_imprint"
         android:title="@string/nav_imprint"
         android:icon="@mipmap/ic_settings_black_24dp"
         />
-
-
 </menu>
