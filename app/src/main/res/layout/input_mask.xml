@@ -41,7 +41,7 @@
                 <!--android:layout_below="@+id/my_toolbar"
                         android:layout_weight="0.09"-->
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/fotoView"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_alignParentStart="true"
