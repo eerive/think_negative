@@ -13,17 +13,23 @@ import java.util.Locale;
 public class Entry implements Comparable <Entry> {
 
     //unsere Einträge: timestamp/date, Rating, Text, Fotopath
+    private int dbId;
     private GregorianCalendar cal;
     private int rating;
     private String text;
     private String fotopath;
 
-    public Entry (int day, int month, int year, int rating, String text, String fotopath) {
+    public Entry (int id, int day, int month, int year, int rating, String text, String fotopath) {
         //cal = new GregorianCalendar(year, month, day);
+        this.dbId = id;
         cal = new GregorianCalendar(day,month,year);
         this.rating = rating;
         this.text = text;
         this.fotopath = fotopath;
+    }
+
+    public int getDbId() {
+        return dbId;
     }
 
     public int getRating() {
@@ -54,9 +60,10 @@ public class Entry implements Comparable <Entry> {
     }
 
     @Override
-    public String toString() {      //brauchen wir das? Ich lass es mal da...
+    public String toString() {      //brauchen wir das? vielleicht anders?
         return "Entry{" +
-                "cal=" + cal +
+                "dbId=" + dbId +
+                ", cal=" + cal +
                 ", rating=" + rating +
                 ", text='" + text + '\'' +
                 ", fotopath='" + fotopath + '\'' +

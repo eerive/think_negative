@@ -1,29 +1,25 @@
 package ss17.droid.unir.thinknegative;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.Image;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
-import android.view.View.OnClickListener;
+
+import java.util.ArrayList;
 
 public class StartScreenActivity extends AppCompatActivity implements OnClickListener {
 
@@ -43,11 +39,18 @@ public class StartScreenActivity extends AppCompatActivity implements OnClickLis
 
     private ImageView mImageView;
 
+    //Datenbank-Kram
+    private ArrayList<Entry> entries;
+    private NegativeDatabase negativeDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.input_mask);
+
+        //Datenbank starten
+        iniDB();
 
         // Init intro slide screen, only the first launch
         Thread t = new Thread(new Runnable() {
@@ -165,5 +168,19 @@ public class StartScreenActivity extends AppCompatActivity implements OnClickLis
     public void onClick(View view) {
 
     }
+
+    //Datenbank initial
+    private void iniDB() {
+        negativeDatabase = new NegativeDatabase(this);
+        negativeDatabase.open();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //Datenbank-Verbindung schließen
+        negativeDatabase.close();
+    }
+
 }
 
