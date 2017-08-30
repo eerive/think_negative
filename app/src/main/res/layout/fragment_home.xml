@@ -1,155 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="ss17.droid.unir.thinknegative.HomeFragment">
 
 
-
-    <android.support.v4.widget.DrawerLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        android:id="@+id/drawerLayout">
+        android:layout_marginTop="?attr/actionBarSize"
+        android:background="@color/WhiteSmoke"
+        android:orientation="vertical"
+        android:weightSum="1">
 
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/WhiteSmoke"
-            android:weightSum="1">
+        <!-- https://www.youtube.com/watch?v=bmeSXhAtDDk  (set title)-->
 
-            <!-- https://www.youtube.com/watch?v=bmeSXhAtDDk  (set title)-->
-
-            <include
-                layout="@layout/nav_actionbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <!--https://developer.android.com/training/appbar/setting-up.html
+        <!--https://developer.android.com/training/appbar/setting-up.html
             Für die Initialisierung der Toolbar in der Activity-->
 
-            <EditText
-                android:id="@+id/input_what"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:hint="@string/hint_what"
-                android:inputType="textMultiLine"
-                android:textAlignment="center"
-                android:layout_above="@+id/button_penguin"
-                android:layout_alignParentStart="true"/>
+        <EditText
+            android:id="@+id/input_what"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_above="@+id/button_penguin"
+            android:layout_alignParentStart="true"
+            android:hint="@string/hint_what"
+            android:inputType="textMultiLine"
+            android:textAlignment="center" />
 
-            <!--android:layout_below="@+id/my_toolbar"
+        <!--android:layout_below="@+id/my_toolbar"
                     android:layout_weight="0.09"-->
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="58dp"
-                android:background="@color/Gainsboro"
-                app:srcCompat="@android:drawable/ic_menu_camera" />
+        <ImageView
+            android:id="@+id/fotoView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/Gainsboro"
+            app:srcCompat="@android:drawable/ic_menu_camera"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
 
-            <Button
-                android:id="@+id/sendButton"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/MetallicSeaweed"
-                android:text="@string/save_button"
-                android:textColor="@color/WhiteSmoke"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentStart="true"/>
+        <Button
+            android:id="@+id/sendButton"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/MetallicSeaweed"
+            android:text="@string/save_button"
+            android:textColor="@color/WhiteSmoke" />
 
-            <ImageButton
-                android:id="@+id/button_cow"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@mipmap/ic_kuh"
-                android:backgroundTint="@android:color/transparent"
-                android:elevation="0dp"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_kuh"
-                android:layout_alignTop="@+id/button_unicorn"
-                android:layout_toEndOf="@+id/button_unicorn"/>
+        <ImageButton
+            android:id="@+id/button_cow"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignTop="@+id/button_unicorn"
+            android:layout_toEndOf="@+id/button_unicorn"
+            android:background="@mipmap/ic_kuh"
+            android:backgroundTint="@android:color/transparent"
+            android:elevation="0dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@mipmap/ic_kuh" />
 
-            <ImageButton
-                android:id="@+id/button_explosion"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@mipmap/ic_atompilz"
-                android:backgroundTint="@android:color/transparent"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_atompilz"
-                android:layout_alignTop="@+id/button_bat"
-                android:layout_toEndOf="@+id/button_bat"/>
+        <ImageButton
+            android:id="@+id/button_explosion"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@mipmap/ic_atompilz"
+            android:backgroundTint="@android:color/transparent"
+            android:scaleType="fitCenter"
+            app:srcCompat="@mipmap/ic_atompilz"
+            android:layout_below="@+id/input_what"
+            android:layout_toEndOf="@+id/button_bat" />
 
-            <ImageButton
-                android:id="@+id/button_penguin"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@mipmap/ic_pinguin"
-                android:backgroundTint="@android:color/transparent"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_pinguin"
-                android:layout_alignTop="@+id/button_cow"
-                android:layout_toEndOf="@+id/button_cow"/>
+        <ImageButton
+            android:id="@+id/button_penguin"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignTop="@+id/button_cow"
+            android:layout_toEndOf="@+id/button_cow"
+            android:background="@mipmap/ic_pinguin"
+            android:backgroundTint="@android:color/transparent"
+            android:scaleType="fitCenter"
+            app:srcCompat="@mipmap/ic_pinguin" />
 
-            <ImageButton
-                android:id="@+id/button_shit"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@mipmap/ic_haufen"
-                android:backgroundTint="@android:color/transparent"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_haufen"
-                android:layout_marginStart="18dp"
-                android:layout_alignTop="@+id/button_unicorn"
-                android:layout_alignParentStart="true"/>
+        <ImageButton
+            android:id="@+id/button_shit"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="12dp"
+            android:background="@mipmap/ic_haufen"
+            android:backgroundTint="@android:color/transparent"
+            android:scaleType="fitCenter"
+            app:srcCompat="@mipmap/ic_haufen"
+            android:layout_below="@+id/input_what"
+            android:layout_alignParentStart="true" />
 
-            <ImageButton
-                android:id="@+id/button_unicorn"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@mipmap/ic_unicorn"
-                android:backgroundTint="@android:color/transparent"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_unicorn"
-                android:layout_above="@+id/sendButton"
-                android:layout_toEndOf="@+id/button_shit"
-                android:layout_marginBottom="17dp"/>
+        <ImageButton
+            android:id="@+id/button_unicorn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_above="@+id/sendButton"
+            android:layout_marginBottom="17dp"
+            android:layout_toEndOf="@+id/button_shit"
+            android:background="@mipmap/ic_unicorn"
+            android:backgroundTint="@android:color/transparent"
+            android:scaleType="fitCenter"
+            app:srcCompat="@mipmap/ic_unicorn" />
 
-            <ImageButton
-                android:id="@+id/button_bat"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@mipmap/ic_bat"
-                android:backgroundTint="@android:color/transparent"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_bat"
-                android:layout_alignTop="@+id/button_penguin"
-                android:layout_toEndOf="@+id/button_penguin"/>
-
-
-        </RelativeLayout>
+        <ImageButton
+            android:id="@+id/button_bat"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignTop="@+id/button_penguin"
+            android:layout_toEndOf="@+id/button_penguin"
+            android:background="@mipmap/ic_bat"
+            android:backgroundTint="@android:color/transparent"
+            android:scaleType="fitCenter"
+            app:srcCompat="@mipmap/ic_bat" />
 
 
-        <android.support.design.widget.NavigationView
-            android:id="@+id/navigator"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            app:menu="@menu/drawer"
-            app:headerLayout="@layout/nav_header"
-            />
-
-    </android.support.v4.widget.DrawerLayout>
-
-</FrameLayout>
+    </RelativeLayout>

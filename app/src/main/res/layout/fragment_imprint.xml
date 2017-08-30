@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:weightSum="1"
+    >
 
     <TextView
         android:id="@+id/imprint"
@@ -60,13 +61,5 @@
         android:text="Datenbank: Anne Köthke"
         android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
-    <Button
-        android:id="@+id/button_imprint_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/etc"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="151dp"
-        android:text="Back" />
 
 </RelativeLayout>
