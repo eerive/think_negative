@@ -1,53 +1,36 @@
 package ss17.droid.unir.thinknegative;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.Image;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
-import android.view.View.OnClickListener;
 
-public class StartScreenActivity extends AppCompatActivity implements OnClickListener {
+public class StartScreenActivity extends AppCompatActivity  {
 
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     private Toolbar mToolbar;
 
-    private ImageButton mUnicornButton;
-    private ImageButton mBaseballbatButton;
-    private ImageButton mExplosionButton;
-    private ImageButton mCowButton;
-    private ImageButton mShitButton;
-    private ImageButton mPenguinButton;
 
-    private EditText mInput;
-
-    private ImageView mImageView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.input_mask);
+        setContentView(R.layout.activity_start_screen);
+
 
         // Init intro slide screen, only the first launch
         Thread t = new Thread(new Runnable() {
@@ -68,6 +51,7 @@ public class StartScreenActivity extends AppCompatActivity implements OnClickLis
         //Toolbar
         mToolbar = (Toolbar) findViewById(R.id.nav_action);
         setSupportActionBar(mToolbar);
+        //getSupportActionBar().setTitle("Think Negative");
         //
         //---------------END TOOLBAR----------------------------------------------------------------
         //incomplete ActionBar
@@ -84,8 +68,18 @@ public class StartScreenActivity extends AppCompatActivity implements OnClickLis
             actionBar.setDisplayUseLogoEnabled(true);
         }
         //--------------END ACTIONBAR---------------------------------------------------------------
-        //NavigationView handler
+        //Create Fragment
+        final FragmentManager fragmentManager = getSupportFragmentManager();
+        Fragment fragment = fragmentManager.findFragmentById(R.id.fragment_container);
+        if(fragment == null){
+            fragment = new HomeFragment();
+            fragmentManager.beginTransaction().add(R.id.fragment_container, fragment).commit();
+        }
+        //----------------END FRAGMENT--------------------------------------------------------------
         NavigationView nv = (NavigationView)findViewById(R.id.navigator);
+        setupDrawerContent(nv);
+        /*
+        //NavigationView handler
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -94,8 +88,7 @@ public class StartScreenActivity extends AppCompatActivity implements OnClickLis
                         mDrawerLayout.closeDrawers();
                         break;
                     case(R.id.nav_imprint):
-                        Intent i1 = new Intent(getApplicationContext(),ImprintScreenActivity.class);
-                        startActivity(i1);
+                        Toast.makeText(getApplicationContext(),"TEST",Toast.LENGTH_SHORT).show();
                         break;
                     case(R.id.to_calendar):
                         Toast.makeText(getApplicationContext(),"NOT IMPLEMENTED YET",Toast.LENGTH_SHORT)
@@ -105,65 +98,58 @@ public class StartScreenActivity extends AppCompatActivity implements OnClickLis
                 return true;
             }
         });
+        */
+        //-------------------END NAVVIEW------------------------------------------------------------
 
-        initUI();
 
     }
 
-    private void initUI() {
-        mUnicornButton = (ImageButton) findViewById(R.id.button_unicorn);
-        mUnicornButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
 
-            }
-        });
-        mBaseballbatButton = (ImageButton) findViewById(R.id.button_bat);
-        mBaseballbatButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-        mCowButton = (ImageButton) findViewById(R.id.button_cow);
-        mCowButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-        mExplosionButton = (ImageButton) findViewById(R.id.button_explosion);
-        mExplosionButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-        mShitButton = (ImageButton) findViewById(R.id.button_shit);
-        mShitButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-        mPenguinButton = (ImageButton) findViewById(R.id.button_penguin);
-        mPenguinButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-        mImageView = (ImageView) findViewById(R.id.fotoView);
+    private void setupDrawerContent(NavigationView navigationView){
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+                        selectDrawerItem(menuItem);
+                        return true;
+                    }
+                });
     }
+
+    private void selectDrawerItem(MenuItem menuItem) {
+        Fragment fragment = null;
+        Class fragmentClass = null;
+
+        switch(menuItem.getItemId()){
+            case R.id.nav_imprint:
+                fragmentClass = ImprintScreenFragment.class;
+                break;
+            case R.id.nav_home:
+                fragmentClass = HomeFragment.class;
+                break;
+            case R.id.nav_calendar:
+                fragmentClass = CalendarScreenFragment.class;
+                break;
+            default:
+                fragmentClass = HomeFragment.class;
+        }
+        try {
+            fragment = (Fragment) fragmentClass.newInstance();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
+        mDrawerLayout.closeDrawers();
+
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         return mToggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onClick(View view) {
-
-    }
 }
 
