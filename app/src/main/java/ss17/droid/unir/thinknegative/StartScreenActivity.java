@@ -3,18 +3,20 @@ package ss17.droid.unir.thinknegative;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Toast;
+
 
 public class StartScreenActivity extends AppCompatActivity  {
 
@@ -25,12 +27,19 @@ public class StartScreenActivity extends AppCompatActivity  {
 
 
 
+    //Datenbank-Kram
+    private ArrayList<Entry> entries;
+    private NegativeDatabase negativeDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_screen);
 
+
+        //Datenbank starten
+        iniDB();
 
         // Init intro slide screen, only the first launch
         Thread t = new Thread(new Runnable() {
@@ -150,6 +159,7 @@ public class StartScreenActivity extends AppCompatActivity  {
     public boolean onOptionsItemSelected(MenuItem item) {
         return mToggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
     }
+
 
 }
 

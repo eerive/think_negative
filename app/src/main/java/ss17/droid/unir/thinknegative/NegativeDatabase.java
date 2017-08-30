@@ -2,11 +2,17 @@ package ss17.droid.unir.thinknegative;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  * Created by Anne on 28.08.2017.
@@ -47,13 +53,15 @@ public class NegativeDatabase {
         }
     }
 
-    public long insertEntry(Entry entry) {
+    public long insertEntry(Entry entry) {      //id müsste automatisch vergeben werden
         ContentValues myEntryValues = new ContentValues();
         myEntryValues.put(KEY_DATE, entry.getFormattedDate());
         myEntryValues.put(KEY_RATING, entry.getRating());
         myEntryValues.put(KEY_TEXT, entry.getText());
         myEntryValues.put(KEY_FOTOPATH, entry.getFotopath());
-        return db.insert(DATABASE_TABLE, null, myEntryValues);
+        // das ist die RowId
+        long rowId = db.insert(DATABASE_TABLE,null,myEntryValues);
+        return rowId;
     }
 
     public void deleteEntry() {
@@ -63,9 +71,40 @@ public class NegativeDatabase {
     }
 
     //alle Einträge eines bestimmten Tages
-    public ArrayList<Entry> showAllOfCertainDay (ArrayList<Entry> entryList) {
+    public ArrayList<Entry> showAllEntriesOfDay (ArrayList<Entry> entryList) {
+        // wie genau auf bestimmten Tag festlegen?
 
-        return entryList;
+        ArrayList<Entry> entries = new ArrayList<Entry>();
+        Cursor cursor = db.query(DATABASE_TABLE, new String[] { KEY_ID,
+                KEY_DATE, KEY_RATING, KEY_TEXT, KEY_FOTOPATH}, null, null, null, null, null);
+        if (cursor.moveToFirst()) {
+            do {
+                int id = cursor.getInt(0);
+                String date = cursor.getString(1);
+                int rating = cursor.getInt(2);
+                String text = cursor.getString(3);
+                String fotopath = cursor.getString(4);
+
+                Date formattedDate = null;
+                try {
+                    formattedDate = new SimpleDateFormat("dd.MM.yyyy",
+                            Locale.GERMAN).parse(date);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                Calendar cal = Calendar.getInstance(Locale.GERMAN);
+                cal.setTime(formattedDate);
+
+                entries.add(new Entry(id, cal.get(Calendar.DAY_OF_MONTH),
+                        cal.get(Calendar.MONTH), cal.get(Calendar.YEAR), rating, text, fotopath));
+            } while (cursor.moveToNext());
+        }
+        return entries;
+    }
+
+    public void close() {
+        db.close();
     }
 
     private class NegativeDBOpenHelper extends SQLiteOpenHelper {
@@ -86,7 +125,7 @@ public class NegativeDatabase {
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+            // was...?
         }
     }
 }
