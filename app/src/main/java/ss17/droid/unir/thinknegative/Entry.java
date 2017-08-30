@@ -9,7 +9,7 @@ import java.util.Locale;
 /**
  * Created by Anne on 28.08.2017.
  */
-
+@SuppressWarnings("Access")
 public class Entry implements Comparable <Entry> {
 
     //unsere Einträge: timestamp/date, Rating, Text, Fotopath

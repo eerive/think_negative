@@ -74,11 +74,12 @@ public class StartScreenActivity extends AppCompatActivity implements OnClickLis
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch(item.getItemId()){
                     case(R.id.home):
-                        mDrawerLayout.closeDrawers();
+                        mDrawerLayout.closeDrawers(); //TODO: If not on homescreen, switch to homescreen
                         break;
                     case(R.id.nav_imprint):
-                        Intent i1 = new Intent(getApplicationContext(),ImprintScreenActivity.class);
-                        startActivity(i1);
+                        Intent nav_imprint_intent = new Intent(getApplicationContext(),
+                                ImprintScreenActivity.class);
+                        startActivity(nav_imprint_intent);
                         break;
                     case(R.id.to_calendar):
                         Toast.makeText(getApplicationContext(),"NOT IMPLEMENTED YET",Toast.LENGTH_SHORT)
@@ -88,6 +89,7 @@ public class StartScreenActivity extends AppCompatActivity implements OnClickLis
                 return true;
             }
         });
+        //--------------END NAVVIEW HANDLER---------------------------------------------------------
     }
 
     @Override

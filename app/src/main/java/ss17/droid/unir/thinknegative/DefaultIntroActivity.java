@@ -3,8 +3,10 @@ package ss17.droid.unir.thinknegative;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.View;
 import android.widget.Toast;
 
+// TODO: insert github link for this repository
 import com.github.paolorotolo.appintro.AppIntro;
 
 
@@ -13,7 +15,8 @@ public final class DefaultIntroActivity extends AppIntro {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //Down here, we add the xml layouts into sample slide inflater.
+
+        //Adding fragment slides
         addSlide(IntroSlideFragment.newInstance(R.layout.intro1));
         addSlide(IntroSlideFragment.newInstance(R.layout.intro2));
         addSlide(IntroSlideFragment.newInstance(R.layout.intro3));
@@ -44,7 +47,8 @@ public final class DefaultIntroActivity extends AppIntro {
         finish();
     }
 
-   // public void getStarted(View v){
-   //     loadMainActivity();
-   // }
+    public void getStarted(View v){
+        loadMainActivity();
+        finish();
+    }
 }
