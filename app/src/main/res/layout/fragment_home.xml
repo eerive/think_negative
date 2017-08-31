@@ -9,6 +9,7 @@
         android:layout_marginTop="?attr/actionBarSize"
         android:background="@color/WhiteSmoke"
         android:orientation="vertical"
+        android:id="@+id/fm_home_layout"
         android:weightSum="1">
 
         <!-- https://www.youtube.com/watch?v=bmeSXhAtDDk  (set title)-->
@@ -19,16 +20,28 @@
     <!--android:layout_below="@+id/my_toolbar"
                     android:layout_weight="0.09"-->
 
-    <include layout="@layout/fragment_home_image_and_text"
-        />
+    <include layout="@layout/fragment_home_image_and_text"/>
+
+    <Button
+        android:id="@+id/sendButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="14dp"
+        android:background="@color/MetallicSeaweed"
+        android:text="@string/save_button"
+        android:textColor="@color/WhiteSmoke"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
         android:weightSum="1"
-        android:layout_above="@+id/add_foto"
-        android:layout_centerHorizontal="true">
+        android:layout_above="@+id/sendButton"
+        android:layout_alignParentStart="true">
 
         <ImageButton
             android:id="@+id/button_cow"
@@ -88,31 +101,5 @@
             android:scaleType="fitCenter"
             app:srcCompat="@mipmap/ic_bat" />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/add_foto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/sendButton"
-        android:layout_alignBottom="@+id/sendButton"
-        android:layout_marginEnd="8dp"
-        android:layout_toStartOf="@+id/sendButton"
-        android:background="@color/MetallicSeaweed"
-        android:text="ADD PHOTO"
-        android:textAppearance="@android:style/TextAppearance.Material.Widget.Button.Colored" />
-
-    <Button
-        android:id="@+id/sendButton"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="11dp"
-        android:layout_marginEnd="42dp"
-        android:background="@color/MetallicSeaweed"
-        android:text="@string/save_button"
-        android:textColor="@color/WhiteSmoke"
-        android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/linearLayout" />
 
 </RelativeLayout>

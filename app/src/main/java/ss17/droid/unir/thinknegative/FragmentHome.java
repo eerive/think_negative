@@ -8,10 +8,12 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -42,14 +44,15 @@ public class FragmentHome extends Fragment {
     private ImageButton mShitButton;
     private ImageButton mPenguinButton;
 
-    private final int REQUEST_GALLERY_CODE = 999;
+
 
     EditText edtTitle, edtContent;
-    Button btnAdd, btnChoose;
+    Button btnAdd;
 
     private ImageView mImageView;
-    protected View mView;
 
+
+    private final int REQUEST_GALLERY_CODE = 999;
     private static final int CAMERA_REQUEST = 1888;
 
     public FragmentHome() {
@@ -67,37 +70,46 @@ public class FragmentHome extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_home, container, false);
-        this.mView = v;
+        final View v = inflater.inflate(R.layout.fragment_home, container, false);
+
 
         initUI(v);
         sqLiteHelper = new SQLiteHelper(getActivity().getApplicationContext(), "ListDB.sqlite",null,1);
         sqLiteHelper.queryData("CREATE TABLE IF NOT EXISTS DBLIST(Id INTEGER PRIMARY KEY AUTOINCREMENT, title VARCHAR, content VARCHAR, image BLOB)");
 
-        Button photoButton = v.findViewById(R.id.add_foto);
-        photoButton.setOnClickListener(new View.OnClickListener() {
+        mImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(cameraIntent, CAMERA_REQUEST);
             }
         });
+
+
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try{
-                    sqLiteHelper.insertData(
-                            edtTitle.getText().toString().trim(),
-                            edtContent.getText().toString().trim(),
-                            imageViewToByte(mImageView)
-                            );
-                    Toast.makeText(getActivity().getApplicationContext(),"Added",Toast.LENGTH_SHORT).show();
-                    edtTitle.setText("");
-                    edtContent.setText("");
-                    mImageView.setImageResource(R.mipmap.ic_launcher_round);
+                String checkTitle = edtTitle.getText().toString().trim();
+                String checkContent = edtContent.getText().toString().trim();
+                if(checkTitle.isEmpty() || checkContent.isEmpty()){
+                    Toast.makeText(getActivity().getApplicationContext(),"Please fill everything", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    try {
+                        sqLiteHelper.insertData(
+                                edtTitle.getText().toString().trim(),
+                                edtContent.getText().toString().trim(),
+                                imageViewToByte(mImageView)
+                        );
+                        Snackbar snackbar = Snackbar.make(v.findViewById(R.id.fm_home_layout),"Added", Snackbar.LENGTH_SHORT);
+                        snackbar.show();
+                        edtTitle.setText("");
+                        edtContent.setText("");
+                        mImageView.setImageResource(R.drawable.image_add_wallpaper);
 
-                } catch(Exception e){
-                    e.printStackTrace();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
@@ -107,7 +119,7 @@ public class FragmentHome extends Fragment {
         return v;
     }
 
-    private byte[] imageViewToByte(ImageView image) {
+    public static byte[] imageViewToByte(ImageView image) {
         Bitmap bitmap = ((BitmapDrawable)image.getDrawable()).getBitmap();
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG,100,stream);
@@ -145,6 +157,7 @@ public class FragmentHome extends Fragment {
                 mImageView.setImageBitmap(bitmap);
             }
         }
+        super.onActivityResult(requestCode,resultCode,data);
     }
 
     private void initUI(View v) {
@@ -153,13 +166,14 @@ public class FragmentHome extends Fragment {
         mUnicornButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-
+                    Toast.makeText(getActivity().getApplicationContext(),"not implemented yet",Toast.LENGTH_SHORT).show();
             }
         });
         mBaseballbatButton = v.findViewById(R.id.button_bat);
         mBaseballbatButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                Toast.makeText(getActivity().getApplicationContext(),"not implemented yet",Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -167,6 +181,7 @@ public class FragmentHome extends Fragment {
         mCowButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                Toast.makeText(getActivity().getApplicationContext(),"not implemented yet",Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -174,6 +189,7 @@ public class FragmentHome extends Fragment {
         mExplosionButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                Toast.makeText(getActivity().getApplicationContext(),"not implemented yet",Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -181,6 +197,7 @@ public class FragmentHome extends Fragment {
         mShitButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                Toast.makeText(getActivity().getApplicationContext(),"not implemented yet",Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -188,6 +205,7 @@ public class FragmentHome extends Fragment {
         mPenguinButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                Toast.makeText(getActivity().getApplicationContext(),"not implemented yet",Toast.LENGTH_SHORT).show();
 
             }
         });

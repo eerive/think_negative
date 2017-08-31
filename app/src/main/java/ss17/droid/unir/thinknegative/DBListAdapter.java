@@ -63,10 +63,10 @@ public class DBListAdapter extends BaseAdapter{
         if(row==null){
             //LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             //row = inflater.inflate(layout, null);
-            row= LayoutInflater.from(context).inflate(R.layout.fragment_home_image_and_text,viewGroup,false);
-            holder.txtTitle = row.findViewById(R.id.input_title);
-            holder.txtContent = row.findViewById(R.id.input_content);
-            holder.imageView = row.findViewById(R.id.fotoView);
+            row= LayoutInflater.from(context).inflate(R.layout.fragment_calendar_customgridview,viewGroup,false);
+            holder.txtTitle = row.findViewById(R.id.textTitle);
+            holder.txtContent = row.findViewById(R.id.textContent);
+            holder.imageView = row.findViewById(R.id.imageDB);
             row.setTag(holder);
         }
         else{

@@ -23,5 +23,5 @@
     <string name="fm_intro1_title">Willkommen bei  Think Negative!</string>
     <string name="fm_intro1_body">Dieses Intro zeigt dir die wichtigsten Informationen für diese App und fragt die benötigten Permissions ab!  Lass uns beginnen! \n\n Dazu auf den Weiter Knopf drücken!</string>
     <string name="fm_intro2_title">Was genau kann ich mit dieser App machen?</string>
-    <string name="long_description_here">Editier mich! \\nIn der nächsten Folie werden die benötigten Permissions abgefragt, bitte nehme diese an.\nEXPLAIN?</string>
+    <string name="long_description_here">Füg ein Foto, einen Titel und paar Worte hinzu.\n Du willst einen Eintrag löschen? Dann zum Calendar,\n und lang gedrückt halten und Delete auswählen :)</string>
 </resources>
