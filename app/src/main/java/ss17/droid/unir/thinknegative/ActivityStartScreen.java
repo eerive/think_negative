@@ -110,7 +110,7 @@ public class ActivityStartScreen extends AppCompatActivity  {
                 fragmentClass = FragmentHome.class;
                 break;
             case R.id.nav_calendar:
-                fragmentClass = FragmentCalendar.class;
+                fragmentClass = FragmentGridList.class;
                 break;
             default:
                 fragmentClass = FragmentHome.class; //This can be changed?
