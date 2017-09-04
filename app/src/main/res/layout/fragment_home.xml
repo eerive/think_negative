@@ -20,7 +20,8 @@
     <!--android:layout_below="@+id/my_toolbar"
                     android:layout_weight="0.09"-->
 
-    <include layout="@layout/fragment_home_image_and_text"/>
+    <include layout="@layout/fragment_home_image_and_text"
+             />
 
     <Button
         android:id="@+id/sendButton"
@@ -39,7 +40,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
-        android:weightSum="1"
+        android:weightSum="6"
         android:layout_above="@+id/sendButton"
         android:layout_alignParentStart="true">
 
@@ -50,6 +51,7 @@
             android:background="@mipmap/ic_kuh"
             android:backgroundTint="@android:color/transparent"
             android:elevation="0dp"
+            android:layout_weight="1"
             android:scaleType="fitCenter"
             app:srcCompat="@mipmap/ic_kuh" />
 
@@ -59,6 +61,7 @@
             android:layout_height="60dp"
             android:background="@mipmap/ic_atompilz"
             android:backgroundTint="@android:color/transparent"
+            android:layout_weight="1"
             android:scaleType="fitCenter"
             app:srcCompat="@mipmap/ic_atompilz" />
 
@@ -66,7 +69,7 @@
             android:id="@+id/button_penguin"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_weight="1.19"
+            android:layout_weight="1"
             android:background="@mipmap/ic_pinguin"
             android:backgroundTint="@android:color/transparent"
             android:scaleType="fitCenter"
@@ -76,7 +79,7 @@
             android:id="@+id/button_shit"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginStart="12dp"
+            android:layout_weight="1"
             android:background="@mipmap/ic_haufen"
             android:backgroundTint="@android:color/transparent"
             android:scaleType="fitCenter"
@@ -86,7 +89,7 @@
             android:id="@+id/button_unicorn"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginBottom="17dp"
+            android:layout_weight="1"
             android:background="@mipmap/ic_unicorn"
             android:backgroundTint="@android:color/transparent"
             android:scaleType="fitCenter"
@@ -96,6 +99,7 @@
             android:id="@+id/button_bat"
             android:layout_width="60dp"
             android:layout_height="60dp"
+            android:layout_weight="1"
             android:background="@mipmap/ic_bat"
             android:backgroundTint="@android:color/transparent"
             android:scaleType="fitCenter"
