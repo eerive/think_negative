@@ -22,15 +22,16 @@ public class SQLiteHelper extends SQLiteOpenHelper{
         database.execSQL(sql);
     }
 
-    public void insertData(String title, String content, byte[] image){
+    public void insertData(String title, String content, byte[] image, double mood){
         SQLiteDatabase database = getWritableDatabase();
-        String sql = "INSERT INTO DBLIST VALUES (NULL, ?, ?, ?)";
+        String sql = "INSERT INTO DBLIST VALUES (NULL, ?, ?, ?, ?)";
         SQLiteStatement statement = database.compileStatement(sql);
         statement.clearBindings();
 
         statement.bindString(1, title);
         statement.bindString(2, content);
         statement.bindBlob(3, image);
+        statement.bindDouble(4, mood);
 
         statement.executeInsert();
 

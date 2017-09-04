@@ -74,8 +74,9 @@ public class FragmentGridList extends Fragment {
             String title = cursor.getString(1);
             String content = cursor.getString(2);
             byte[] image = cursor.getBlob(3);
+            double mood = cursor.getDouble(4);
 
-            list.add(new DBList(id,title,content,image));
+            list.add(new DBList(id,title,content,image, mood));
         }
         adapter.notifyDataSetChanged();
 
@@ -151,8 +152,9 @@ public class FragmentGridList extends Fragment {
             String title = cursor.getString(1);
             String content = cursor.getString(2);
             byte[] image = cursor.getBlob(3);
+            double mood = cursor.getDouble(4);
 
-            list.add(new DBList(id,title,content,image));
+            list.add(new DBList(id,title,content,image,mood));
         }
         adapter.notifyDataSetChanged();
     }

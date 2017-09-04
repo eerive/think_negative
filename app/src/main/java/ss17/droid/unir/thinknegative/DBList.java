@@ -9,12 +9,16 @@ public class DBList {
     private String title;
     private String content;
     private byte[] image;
+    private double mood;
 
-    public DBList(int id, String title, String content, byte[] image) {
+
+
+    public DBList(int id, String title, String content, byte[] image, double mood) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.image = image;
+        this.mood = mood;
     }
 
 
@@ -48,5 +52,13 @@ public class DBList {
 
     public void setImage(byte[] image) {
         this.image = image;
+    }
+
+    public double getMood() {
+        return mood;
+    }
+
+    public void setMood(double mood) {
+        this.mood = mood;
     }
 }
