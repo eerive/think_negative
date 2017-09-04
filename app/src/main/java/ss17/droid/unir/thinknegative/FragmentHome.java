@@ -1,22 +1,17 @@
 package ss17.droid.unir.thinknegative;
 
 
-import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,13 +24,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
-
-import static android.app.Activity.RESULT_OK;
 
 
 /**
@@ -51,8 +41,7 @@ public class FragmentHome extends Fragment {
     private ImageButton mPenguinButton;
 
     //je nachdem, welches Bild ausgewählt ist, wird die Variable gesetzt
-    private int imageSelected = 0;
-    private boolean isImageSelected = false;
+    private double moodSelected = 0;
 
 
     EditText edtContent;
@@ -84,8 +73,9 @@ public class FragmentHome extends Fragment {
 
 
         initUI(v);
+
         sqLiteHelper = new SQLiteHelper(getActivity().getApplicationContext(), "ListDB.sqlite",null,1);
-        sqLiteHelper.queryData("CREATE TABLE IF NOT EXISTS DBLIST(Id INTEGER PRIMARY KEY AUTOINCREMENT, title VARCHAR, content VARCHAR, image BLOB)");
+        sqLiteHelper.queryData("CREATE TABLE IF NOT EXISTS DBLIST(Id INTEGER PRIMARY KEY AUTOINCREMENT, title VARCHAR, content VARCHAR, image BLOB, mood DOUBLE)");
 
         setDate();
         mImageView.setOnClickListener(new View.OnClickListener() {
@@ -101,7 +91,7 @@ public class FragmentHome extends Fragment {
             @Override
             public void onClick(View view) {
                 String checkContent = edtContent.getText().toString().trim();
-                if(checkContent.isEmpty()){
+                if(moodSelected ==0 || checkContent.isEmpty()){
                     Toast.makeText(getActivity().getApplicationContext(),"Please fill everything", Toast.LENGTH_SHORT).show();
                 }
                 else {
@@ -109,12 +99,14 @@ public class FragmentHome extends Fragment {
                         sqLiteHelper.insertData(
                                 view_date.getText().toString(),
                                 edtContent.getText().toString().trim(),
-                                imageViewToByte(mImageView)
+                                imageViewToByte(mImageView),
+                                moodSelected
                         );
                         Snackbar snackbar = Snackbar.make(v.findViewById(R.id.fm_home_layout),"Added", Snackbar.LENGTH_SHORT);
                         snackbar.show();
                         edtContent.setText("");
-                        mImageView.setImageResource(R.drawable.image_add_wallpaper);
+                        setTransparentBackground();
+                        mImageView.setImageResource(0);
 
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -182,12 +174,12 @@ public class FragmentHome extends Fragment {
         mUnicornButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(imageSelected == 0){
+                if(moodSelected == 0){
                     v.setBackgroundResource(R.color.MetallicSeaweed);
-                    imageSelected = 5;
+                    moodSelected = 5;
                 } else {
                     setTransparentBackground();
-                    imageSelected = 0;
+                    moodSelected = 0;
                     onClick(v);
                 }
 
@@ -197,12 +189,12 @@ public class FragmentHome extends Fragment {
         mBaseballbatButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(imageSelected == 0){
+                if(moodSelected == 0){
                     v.setBackgroundResource(R.color.MetallicSeaweed);
-                    imageSelected = 6;
+                    moodSelected = 6;
                 } else {
                     setTransparentBackground();
-                    imageSelected = 0;
+                    moodSelected = 0;
                     onClick(v);
                 }
 
@@ -212,12 +204,12 @@ public class FragmentHome extends Fragment {
         mCowButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(imageSelected == 0){
+                if(moodSelected == 0){
                     v.setBackgroundResource(R.color.MetallicSeaweed);
-                    imageSelected = 1;
+                    moodSelected = 1;
                 } else {
                     setTransparentBackground();
-                    imageSelected = 0;
+                    moodSelected = 0;
                     onClick(v);
                 }
 
@@ -227,12 +219,12 @@ public class FragmentHome extends Fragment {
         mExplosionButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if (imageSelected == 0) {
+                if (moodSelected == 0) {
                     v.setBackgroundResource(R.color.MetallicSeaweed);
-                    imageSelected = 2;
+                    moodSelected = 2;
                 } else {
                     setTransparentBackground();
-                    imageSelected = 0;
+                    moodSelected = 0;
                     onClick(v);
                 }
             }
@@ -241,12 +233,12 @@ public class FragmentHome extends Fragment {
         mShitButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(imageSelected == 0){
+                if(moodSelected == 0){
                     v.setBackgroundResource(R.color.MetallicSeaweed);
-                    imageSelected = 4;
+                    moodSelected = 4;
                 } else {
                     setTransparentBackground();
-                    imageSelected = 0;
+                    moodSelected = 0;
                     onClick(v);
                 }
 
@@ -256,12 +248,12 @@ public class FragmentHome extends Fragment {
         mPenguinButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(imageSelected == 0){
+                if(moodSelected == 0){
                     v.setBackgroundResource(R.color.MetallicSeaweed);
-                    imageSelected = 3;
+                    moodSelected = 3;
                 } else {
                     setTransparentBackground();
-                    imageSelected = 0;
+                    moodSelected = 0;
                     onClick(v);
                 }
 

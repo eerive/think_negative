@@ -50,7 +50,7 @@ public class DBListAdapter extends BaseAdapter{
 
 
     private class ViewHolder{
-        ImageView imageView;
+        ImageView imageView, imageMood;
         TextView txtTitle, txtContent;
     }
 
@@ -67,6 +67,7 @@ public class DBListAdapter extends BaseAdapter{
             holder.txtTitle = row.findViewById(R.id.textTitle);
             holder.txtContent = row.findViewById(R.id.textContent);
             holder.imageView = row.findViewById(R.id.imageDB);
+            holder.imageMood = row.findViewById(R.id.mood_view);
             row.setTag(holder);
         }
         else{
@@ -83,6 +84,28 @@ public class DBListAdapter extends BaseAdapter{
         Bitmap bitmap = BitmapFactory.decodeByteArray(dblistImage, 0, dblistImage.length);
 
         holder.imageView.setImageBitmap(bitmap);
+
+        switch ((int)dbList.getMood()){
+            case 1:
+                holder.imageMood.setImageResource(R.drawable.ic_kuh_web);
+                break;
+            case 2:
+                holder.imageMood.setImageResource(R.drawable.ic_atompilz_web);
+                break;
+            case 3:
+                holder.imageMood.setImageResource(R.drawable.ic_pinguin_web);
+                break;
+            case 4:
+                holder.imageMood.setImageResource(R.drawable.ic_haufen_web);
+                break;
+            case 5:
+                holder.imageMood.setImageResource(R.drawable.ic_unicorn_web);
+                break;
+            case 6:
+                holder.imageMood.setImageResource(R.drawable.ic_bat_web);
+                break;
+        }
+
         return row;
     }
 }
