@@ -18,7 +18,7 @@
     <color name="SeaBlue">#05668D</color>
     <color name="MetallicSeaweed">#028090</color>
     <color name="PersianGreen">#00A896</color>
-    <color name="CaribeenGreen">#02C39A</color>
+    <color name="CaribeenGreen">#02c39a</color>
     <color name="PaleBud">#F0F3BD</color>
 
 
@@ -115,7 +115,7 @@
     <color name="Olive">#808000</color>
     <color name="Purple">#800080</color>
     <color name="Maroon">#800000</color>
-    <color name="Aquamarine">#7FFFD4</color>
+    <color name="Aquamarine">#7fffd4</color>
     <color name="Chartreuse">#7FFF00</color>
     <color name="LawnGreen">#7CFC00</color>
     <color name="MediumSlateBlue">#7B68EE</color>
@@ -142,14 +142,14 @@
     <color name="LightSeaGreen">#20B2AA</color>
     <color name="DodgerBlue">#1E90FF</color>
     <color name="MidnightBlue">#191970</color>
-    <color name="Aqua">#00FFFF</color>
+    <color name="Aqua">#00ffff</color>
     <color name="Cyan">#00FFFF</color>
     <color name="SpringGreen">#00FF7F</color>
     <color name="Lime">#00FF00</color>
     <color name="MediumSpringGreen">#00FA9A</color>
     <color name="DarkTurquoise">#00CED1</color>
     <color name="DeepSkyBlue">#00BFFF</color>
-    <color name="DarkCyan">#008B8B</color>
+    <color name="DarkCyan">#008b8b</color>
     <color name="Teal">#008080</color>
     <color name="Green">#008000</color>
     <color name="DarkGreen">#006400</color>

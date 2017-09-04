@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -47,6 +49,10 @@ public class FragmentHome extends Fragment {
     private ImageButton mCowButton;
     private ImageButton mShitButton;
     private ImageButton mPenguinButton;
+
+    //je nachdem, welches Bild ausgewählt ist, wird die Variable gesetzt
+    private int imageSelected = 0;
+    private boolean isImageSelected = false;
 
 
     EditText edtContent;
@@ -175,55 +181,109 @@ public class FragmentHome extends Fragment {
         mUnicornButton = v.findViewById(R.id.button_unicorn);
         mUnicornButton.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
-                    Toast.makeText(getActivity().getApplicationContext(),"not implemented yet",Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+                if(imageSelected == 0){
+                    v.setBackgroundResource(R.color.MetallicSeaweed);
+                    imageSelected = 5;
+                } else {
+                    setTransparentBackground();
+                    imageSelected = 0;
+                    onClick(v);
+                }
+
             }
         });
         mBaseballbatButton = v.findViewById(R.id.button_bat);
         mBaseballbatButton.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
-                Toast.makeText(getActivity().getApplicationContext(),"not implemented yet",Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+                if(imageSelected == 0){
+                    v.setBackgroundResource(R.color.MetallicSeaweed);
+                    imageSelected = 6;
+                } else {
+                    setTransparentBackground();
+                    imageSelected = 0;
+                    onClick(v);
+                }
 
             }
         });
         mCowButton = v.findViewById(R.id.button_cow);
         mCowButton.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
-                Toast.makeText(getActivity().getApplicationContext(),"not implemented yet",Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+                if(imageSelected == 0){
+                    v.setBackgroundResource(R.color.MetallicSeaweed);
+                    imageSelected = 1;
+                } else {
+                    setTransparentBackground();
+                    imageSelected = 0;
+                    onClick(v);
+                }
 
             }
         });
         mExplosionButton = v.findViewById(R.id.button_explosion);
         mExplosionButton.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
-                Toast.makeText(getActivity().getApplicationContext(),"not implemented yet",Toast.LENGTH_SHORT).show();
-
+            public void onClick(View v) {
+                if (imageSelected == 0) {
+                    v.setBackgroundResource(R.color.MetallicSeaweed);
+                    imageSelected = 2;
+                } else {
+                    setTransparentBackground();
+                    imageSelected = 0;
+                    onClick(v);
+                }
             }
         });
         mShitButton = v.findViewById(R.id.button_shit);
         mShitButton.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
-                Toast.makeText(getActivity().getApplicationContext(),"not implemented yet",Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+                if(imageSelected == 0){
+                    v.setBackgroundResource(R.color.MetallicSeaweed);
+                    imageSelected = 4;
+                } else {
+                    setTransparentBackground();
+                    imageSelected = 0;
+                    onClick(v);
+                }
 
             }
         });
         mPenguinButton = v.findViewById(R.id.button_penguin);
         mPenguinButton.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
-                Toast.makeText(getActivity().getApplicationContext(),"not implemented yet",Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+                if(imageSelected == 0){
+                    v.setBackgroundResource(R.color.MetallicSeaweed);
+                    imageSelected = 3;
+                } else {
+                    setTransparentBackground();
+                    imageSelected = 0;
+                    onClick(v);
+                }
 
             }
         });
+
+
+
         mImageView = v.findViewById(R.id.fotoView);
         view_date = v.findViewById(R.id.view_today);
         edtContent = v.findViewById(R.id.input_content);
         btnAdd = v.findViewById(R.id.sendButton);
 
+    }
+
+    private void setTransparentBackground() {
+        mUnicornButton.setBackgroundColor(Color.TRANSPARENT);
+        mBaseballbatButton.setBackgroundColor(Color.TRANSPARENT);
+        mCowButton.setBackgroundColor(Color.TRANSPARENT);
+        mExplosionButton.setBackgroundColor(Color.TRANSPARENT);
+        mPenguinButton.setBackgroundColor(Color.TRANSPARENT);
+        mShitButton.setBackgroundColor(Color.TRANSPARENT);
     }
 
 }
