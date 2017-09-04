@@ -11,6 +11,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -39,6 +40,8 @@ public class FragmentHome extends Fragment {
     private ImageButton mCowButton;
     private ImageButton mShitButton;
     private ImageButton mPenguinButton;
+
+
 
     //je nachdem, welches Bild ausgewählt ist, wird die Variable gesetzt
     private double moodSelected = 0;
