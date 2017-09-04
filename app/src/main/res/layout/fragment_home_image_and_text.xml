@@ -17,6 +17,7 @@
 
     <TextView
         android:id="@+id/view_today"
+        android:layout_alignParentStart="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="250dp"
@@ -26,7 +27,9 @@
     <ImageView
         android:id="@+id/fotoView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="250dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
         android:background="@color/WhiteSmoke"
         android:src="@drawable/image_add_wallpaper"
         android:adjustViewBounds="true" />
