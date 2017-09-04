@@ -47,62 +47,56 @@
             android:id="@+id/button_cow"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="@mipmap/ic_kuh"
-            android:backgroundTint="@android:color/transparent"
-            android:elevation="0dp"
             android:layout_weight="1"
+            android:background="@android:color/transparent"
             android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/ic_kuh" />
+            app:srcCompat="@mipmap/ic_kuh"/>
 
         <ImageButton
             android:id="@+id/button_explosion"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="@mipmap/ic_atompilz"
-            android:backgroundTint="@android:color/transparent"
             android:layout_weight="1"
+            android:background="@android:color/transparent"
             android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/ic_atompilz" />
+            app:srcCompat="@mipmap/ic_atompilz"/>
 
         <ImageButton
             android:id="@+id/button_penguin"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:background="@mipmap/ic_pinguin"
-            android:backgroundTint="@android:color/transparent"
+            android:background="@android:color/transparent"
             android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/ic_pinguin" />
+            app:srcCompat="@mipmap/ic_pinguin"/>
 
         <ImageButton
             android:id="@+id/button_shit"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:background="@mipmap/ic_haufen"
-            android:backgroundTint="@android:color/transparent"
+            android:background="@android:color/transparent"
             android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/ic_haufen" />
+            app:srcCompat="@mipmap/ic_haufen"/>
 
         <ImageButton
             android:id="@+id/button_unicorn"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:background="@mipmap/ic_unicorn"
-            android:backgroundTint="@android:color/transparent"
+            android:background="@android:color/transparent"
+            android:contentDescription="kotzendes Einhorn"
             android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/ic_unicorn" />
+            app:srcCompat="@mipmap/ic_unicorn"/>
 
         <ImageButton
             android:id="@+id/button_bat"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:background="@mipmap/ic_bat"
-            android:backgroundTint="@android:color/transparent"
+            android:background="@android:color/transparent"
             android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/ic_bat" />
+            app:srcCompat="@mipmap/ic_bat"/>
     </LinearLayout>
 
 </RelativeLayout>
