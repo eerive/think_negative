@@ -10,33 +10,24 @@
         android:id="@+id/input_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/input_title"
         android:layout_marginTop="300dp"
         android:hint="@string/hint_what"
         android:inputType="textMultiLine"
         android:textAlignment="center" />
 
-    <EditText
-        android:id="@+id/input_title"
+    <TextView
+        android:id="@+id/view_today"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/fotoView"
         android:layout_marginTop="250dp"
-        android:hint="Title"
-        android:inputType="text"
         android:maxLines="1"
-        android:textAlignment="center" />
+        android:textAlignment="center"/>
 
     <ImageView
         android:id="@+id/fotoView"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content"
         android:background="@color/WhiteSmoke"
         android:src="@drawable/image_add_wallpaper"
-        android:adjustViewBounds="true"
-       />
+        android:adjustViewBounds="true" />
 </FrameLayout>

@@ -23,11 +23,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -45,11 +49,11 @@ public class FragmentHome extends Fragment {
     private ImageButton mPenguinButton;
 
 
-
-    EditText edtTitle, edtContent;
+    EditText edtContent;
     Button btnAdd;
 
     private ImageView mImageView;
+    private TextView view_date;
 
 
     private final int REQUEST_GALLERY_CODE = 999;
@@ -77,6 +81,7 @@ public class FragmentHome extends Fragment {
         sqLiteHelper = new SQLiteHelper(getActivity().getApplicationContext(), "ListDB.sqlite",null,1);
         sqLiteHelper.queryData("CREATE TABLE IF NOT EXISTS DBLIST(Id INTEGER PRIMARY KEY AUTOINCREMENT, title VARCHAR, content VARCHAR, image BLOB)");
 
+        setDate();
         mImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,21 +94,19 @@ public class FragmentHome extends Fragment {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String checkTitle = edtTitle.getText().toString().trim();
                 String checkContent = edtContent.getText().toString().trim();
-                if(checkTitle.isEmpty() || checkContent.isEmpty()){
+                if(checkContent.isEmpty()){
                     Toast.makeText(getActivity().getApplicationContext(),"Please fill everything", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     try {
                         sqLiteHelper.insertData(
-                                edtTitle.getText().toString().trim(),
+                                view_date.getText().toString(),
                                 edtContent.getText().toString().trim(),
                                 imageViewToByte(mImageView)
                         );
                         Snackbar snackbar = Snackbar.make(v.findViewById(R.id.fm_home_layout),"Added", Snackbar.LENGTH_SHORT);
                         snackbar.show();
-                        edtTitle.setText("");
                         edtContent.setText("");
                         mImageView.setImageResource(R.drawable.image_add_wallpaper);
 
@@ -117,6 +120,13 @@ public class FragmentHome extends Fragment {
 
 
         return v;
+    }
+
+    private void setDate() {
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd. MMMM yy");
+        String dateString = sdf.format(c.getTime());
+        view_date.setText(dateString);
     }
 
     public static byte[] imageViewToByte(ImageView image) {
@@ -210,7 +220,7 @@ public class FragmentHome extends Fragment {
             }
         });
         mImageView = v.findViewById(R.id.fotoView);
-        edtTitle = v.findViewById(R.id.input_title);
+        view_date = v.findViewById(R.id.view_today);
         edtContent = v.findViewById(R.id.input_content);
         btnAdd = v.findViewById(R.id.sendButton);
 
