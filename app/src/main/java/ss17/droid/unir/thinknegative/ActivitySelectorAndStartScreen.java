@@ -158,45 +158,5 @@ public class ActivitySelectorAndStartScreen extends AppCompatActivity  {
             }
         },2000); //Disable double press exit after 2 seconds
     }
-
-
-    /*
-     * DEAD CODE - WILL BE REMOVED WHEN NOT NEEDED ANYMORE
-     *
-     *
-     * //NavigationView handler
-        nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch(item.getItemId()){
-                    case(R.id.home):
-                        mDrawerLayout.closeDrawers();
-                        break;
-                    case(R.id.nav_imprint):
-                        Toast.makeText(getApplicationContext(),"TEST",Toast.LENGTH_SHORT).show();
-                        break;
-                    case(R.id.to_calendar):
-                        Toast.makeText(getApplicationContext(),"NOT IMPLEMENTED YET",Toast.LENGTH_SHORT)
-                                .show();
-                        break;
-                }
-                return true;
-            }
-        });
-
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     */
 }
 

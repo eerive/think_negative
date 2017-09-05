@@ -27,7 +27,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="230dp"
         android:maxLines="1"
-        android:textAlignment="textStart"
+        android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="italic" />
 
@@ -39,7 +39,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="280dp"
         android:background="@drawable/bg_input_field"
-        android:gravity="center_horizontal"
+        android:gravity="center"
         android:hint="@string/hint_what"
         android:inputType="textMultiLine"
         android:maxLength="300"

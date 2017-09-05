@@ -2,8 +2,6 @@
 
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 xmlns:fab="http://schemas.android.com/apk/res-auto"
@@ -71,7 +69,8 @@
             android:id="@+id/menu_mood_cow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_kuh"
+            android:src="@mipmap/ic_kuh_round"
+            fab:fab_colorNormal="@color/MetallicSeaweed"
             fab:fab_label="Blöde Kuh!"
             fab:fab_size="normal" />
 
@@ -80,6 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_atompilz_round"
+            fab:fab_colorNormal="@color/MetallicSeaweed"
             fab:fab_label="Boom!"
             fab:fab_size="normal" />
 
@@ -87,7 +87,8 @@
             android:id="@+id/menu_mood_sad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_pinguin"
+            android:src="@mipmap/ic_pinguin_round"
+            fab:fab_colorNormal="@color/MetallicSeaweed"
             fab:fab_label=":("
             fab:fab_size="normal" />
 
@@ -95,7 +96,8 @@
             android:id="@+id/menu_mood_shit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_haufen"
+            android:src="@mipmap/ic_haufen_round"
+            fab:fab_colorNormal="@color/MetallicSeaweed"
             fab:fab_label="Kacke!"
             fab:fab_size="normal" />
 
@@ -103,17 +105,19 @@
             android:id="@+id/menu_mood_unicorn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_unicorn"
-            fab:fab_label="-"
+            android:src="@mipmap/ic_unicorn_round"
+            fab:fab_colorNormal="@color/MetallicSeaweed"
+            fab:fab_label="too sweet"
             fab:fab_size="normal" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/menu_mood_angry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_bat"
-            fab:fab_label="Wut!"
-            fab:fab_size="normal" />
+            android:src="@mipmap/ic_bat_round"
+            fab:fab_colorNormal="@color/MetallicSeaweed"
+            fab:fab_label="Grrrr!"
+            fab:fab_size="normal"/>
 
     </com.github.clans.fab.FloatingActionMenu>
 

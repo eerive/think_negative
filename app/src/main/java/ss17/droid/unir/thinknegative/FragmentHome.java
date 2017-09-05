@@ -50,8 +50,11 @@ public class FragmentHome extends Fragment {
     private FloatingActionButton fabPenguin;
 
     private FloatingActionMenu mFAM;
-    //je nachdem, welches Bild ausgewählt ist, wird die Variable gesetzt
+
+    //depending on the picture selected, moodSelected is set
     private double moodSelected = 0;
+
+
     private EditText edtContent;
     private ImageView mImageView;
     private TextView view_date;
@@ -245,99 +248,4 @@ public class FragmentHome extends Fragment {
         edtContent = v.findViewById(R.id.input_content);
 
     }
-
-
-    /**
-     *
-     mUnicornButton = v.findViewById(R.id.button_unicorn);
-     mUnicornButton.setOnClickListener(new View.OnClickListener(){
-    @Override
-    public void onClick(View v) {
-    if(moodSelected == 0){
-    v.setBackgroundResource(R.color.MetallicSeaweed);
-    moodSelected = 5;
-    } else {
-    setTransparentBackground();
-    moodSelected = 0;
-    onClick(v);
-    }
-
-    }
-    });
-     mBaseballbatButton = v.findViewById(R.id.button_bat);
-     mBaseballbatButton.setOnClickListener(new View.OnClickListener(){
-    @Override
-    public void onClick(View v) {
-    if(moodSelected == 0){
-    v.setBackgroundResource(R.color.MetallicSeaweed);
-    moodSelected = 6;
-    } else {
-    setTransparentBackground();
-    moodSelected = 0;
-    onClick(v);
-    }
-
-    }
-    });
-     mCowButton = v.findViewById(R.id.button_cow);
-     mCowButton.setOnClickListener(new View.OnClickListener(){
-    @Override
-    public void onClick(View v) {
-    if(moodSelected == 0){
-    v.setBackgroundResource(R.color.MetallicSeaweed);
-    moodSelected = 1;
-    } else {
-    setTransparentBackground();
-    moodSelected = 0;
-    onClick(v);
-    }
-
-    }
-    });
-     mExplosionButton = v.findViewById(R.id.button_explosion);
-     mExplosionButton.setOnClickListener(new View.OnClickListener(){
-    @Override
-    public void onClick(View v) {
-    if (moodSelected == 0) {
-    v.setBackgroundResource(R.color.MetallicSeaweed);
-    moodSelected = 2;
-    } else {
-    setTransparentBackground();
-    moodSelected = 0;
-    onClick(v);
-    }
-    }
-    });
-     mShitButton = v.findViewById(R.id.button_shit);
-     mShitButton.setOnClickListener(new View.OnClickListener(){
-    @Override
-    public void onClick(View v) {
-    if(moodSelected == 0){
-    v.setBackgroundResource(R.color.MetallicSeaweed);
-    moodSelected = 4;
-    } else {
-    setTransparentBackground();
-    moodSelected = 0;
-    onClick(v);
-    }
-
-    }
-    });
-     mPenguinButton = v.findViewById(R.id.button_penguin);
-     mPenguinButton.setOnClickListener(new View.OnClickListener(){
-    @Override
-    public void onClick(View v) {
-    if(moodSelected == 0){
-    v.setBackgroundResource(R.color.MetallicSeaweed);
-    moodSelected = 3;
-    } else {
-    setTransparentBackground();
-    moodSelected = 0;
-    onClick(v);
-    }
-
-    }
-    });
-
-     */
 }

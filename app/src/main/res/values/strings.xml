@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Think Negative</string>
 
-    <string name="hint_what">What happened?\n Type it in here!\n</string>
+    <string name="hint_what">Was ist passiert?!\n Lass es raus, schreib es einfach auf.\n</string>
     <string name="save_button">Speichern</string>
     <string name="skip">Skip</string>
     <string name="open">Open</string>
@@ -10,9 +10,9 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Einstellungen</string>
     <string name="nav_imprint">Impressum</string>
-    <string name="to_calendar">Calendar</string>
+    <string name="to_calendar">Übersicht</string>
     <string name="nav_header_content">HEADER</string>
 
     <!-- -->
