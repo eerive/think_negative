@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <item name="visible" type="id"/>
+    <item name="masked" type="id"/>
+
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
@@ -8,6 +11,8 @@
     added colors from stackoverflow:
     https://stackoverflow.com/questions/3769762/web-colors-in-an-android-color-xml-resource-file
     -->
+    <color name="ShowcaseBackground">#803f51b5</color>
+
     <color name="BlueJeans">#5BC0EB</color>
     <color name="GargoyleGas">#FDE74C</color>
     <color name="AndroidGreen">#9BC53D</color>

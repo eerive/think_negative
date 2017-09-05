@@ -37,20 +37,6 @@ public class SQLiteHelper extends SQLiteOpenHelper{
 
     }
 
-    public void updateData(int id, String title, String content, byte[] image ){
-        SQLiteDatabase database = getWritableDatabase();
-
-        String sql = "UPDATE DBLIST SET title = ?, content = ?, image = ? WHERE id = ?";
-        SQLiteStatement statement = database.compileStatement(sql);
-
-        statement.bindDouble(1,(double)id);
-        statement.bindString(2,title);
-        statement.bindString(3,content);
-        statement.bindBlob(4,image);
-
-        statement.execute();
-        database.close();
-    }
 
     public void deleteData(int id){
         SQLiteDatabase database = getWritableDatabase();

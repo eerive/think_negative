@@ -17,10 +17,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.github.amlcurran.showcaseview.ShowcaseView;
+import com.github.amlcurran.showcaseview.targets.ViewTarget;
+
 /**
  * <empty>
  */
-public class ActivityStartScreen extends AppCompatActivity  {
+public class ActivitySelectorAndStartScreen extends AppCompatActivity  {
 
     private boolean doubleBackToExit = false;
 
@@ -53,7 +56,7 @@ public class ActivityStartScreen extends AppCompatActivity  {
                 SharedPreferences sharedPreferences = getSharedPreferences(Configuration.FLAG, Context.MODE_PRIVATE);
                 if(sharedPreferences.getBoolean(Configuration.FLAG,true)){
 
-                    startActivity(new Intent(ActivityStartScreen.this,ActivityIntroSlides.class));
+                    startActivity(new Intent(ActivitySelectorAndStartScreen.this,ActivityIntroSlides.class));
                     SharedPreferences.Editor e = sharedPreferences.edit();
                     e.putBoolean(Configuration.FLAG,false);
                     e.apply();
@@ -62,6 +65,9 @@ public class ActivityStartScreen extends AppCompatActivity  {
         });
         t.start();
     }
+
+
+
 
     private void initActionAndToolBar() {
         //ActionBar + Toolbar
@@ -128,6 +134,7 @@ public class ActivityStartScreen extends AppCompatActivity  {
         mDrawerLayout.closeDrawers();
 
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

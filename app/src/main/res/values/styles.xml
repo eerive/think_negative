@@ -22,8 +22,29 @@
 
     <style name="ImprintTheme" parent="Theme.AppCompat.NoActionBar" />
 
+    <style name="GridItemTheme" parent="Theme.AppCompat.Light.DarkActionBar" />
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!--  UNUSED SHOWCASE CURRENTLY
+    <style name="ShowCaseViewStyle" parent="ShowcaseView.Light">
+        <item name="sv_backgroundColor">@color/ShowcaseBackground</item>
+        <item name="sv_showcaseColor">@color/colorAccent</item>
+        <item name="sv_buttonText">OK</item>
+        <item name="sv_tintButtonColor">true</item>
+        <item name="sv_titleTextAppearance">@style/ShowcaseTitleStyle</item>
+        <item name="sv_detailTextAppearance">@style/ShowcaseDetailStyle</item>
+    </style>
+
+    <style name="ShowcaseTitleStyle" parent="TextAppearance.ShowcaseView.Title.Light">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="ShowcaseDetailStyle" parent="TextAppearance.ShowcaseView.Title.Light">
+        <item name="android:textColor">#fff</item>
+    </style>
+    -->
 </resources>

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Think Negative</string>
 
-    <string name="hint_what">Was ist passiert?</string>
+    <string name="hint_what">What happened?\n Type it in here!\n</string>
     <string name="save_button">Speichern</string>
     <string name="skip">Skip</string>
     <string name="open">Open</string>

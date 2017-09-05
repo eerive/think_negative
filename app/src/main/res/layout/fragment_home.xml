@@ -23,177 +23,176 @@
 
     <include layout="@layout/fragment_home_image_and_text"/>
 
-    <Button
-        android:id="@+id/sendButton"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/MetallicSeaweed"
-        android:text="@string/save_button"
-        android:textColor="@color/WhiteSmoke"
-        android:layout_alignBottom="@+id/menu"
-        android:layout_toStartOf="@+id/menu"
-        android:layout_marginEnd="21dp"/>
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="70dp"
-        android:weightSum="6"
-        android:layout_above="@+id/sendButton"
-        android:layout_alignParentStart="true">
-
-        <ImageButton
-            android:id="@+id/button_cow"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/ic_kuh"/>
-
-        <ImageButton
-            android:id="@+id/button_explosion"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/ic_atompilz"/>
-
-        <ImageButton
-            android:id="@+id/button_penguin"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/ic_pinguin"/>
-
-        <ImageButton
-            android:id="@+id/button_shit"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/ic_haufen"/>
-
-        <ImageButton
-            android:id="@+id/button_unicorn"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:contentDescription="kotzendes Einhorn"
-            android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/ic_unicorn"/>
-
-        <ImageButton
-            android:id="@+id/button_bat"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/ic_bat"/>
-    </LinearLayout>
 
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        fab:menu_animationDelayPerItem="50"
+        fab:menu_backgroundColor="#CCFFFFFF"
+        fab:menu_buttonSpacing="0dp"
+        fab:menu_colorNormal="@color/SeaBlue"
+        fab:menu_colorPressed="@color/MetallicSeaweed"
+        fab:menu_colorRipple="@color/MetallicSeaweed"
+        fab:menu_fab_hide_animation="@anim/hide_to_bottom"
+        fab:menu_fab_label="Close"
+        fab:menu_fab_show_animation="@anim/show_from_bottom"
         fab:menu_fab_size="normal"
-        fab:menu_showShadow="true"
+        fab:menu_icon="@drawable/fab_add"
+        fab:menu_labels_colorNormal="#333333"
+        fab:menu_labels_colorPressed="#444444"
+        fab:menu_labels_colorRipple="#66FFFFFF"
+        fab:menu_labels_cornerRadius="3dp"
+        fab:menu_labels_ellipsize="none"
+        fab:menu_labels_hideAnimation="@anim/fab_slide_out_to_right"
+        fab:menu_labels_margin="0dp"
+        fab:menu_labels_maxLines="-1"
+        fab:menu_labels_padding="8dp"
+        fab:menu_labels_paddingBottom="4dp"
+        fab:menu_labels_paddingLeft="8dp"
+        fab:menu_labels_paddingRight="8dp"
+        fab:menu_labels_paddingTop="4dp"
+        fab:menu_labels_position="left"
+        fab:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
+        fab:menu_labels_showShadow="true"
+        fab:menu_labels_singleLine="false"
+        fab:menu_labels_textColor="#FFFFFF"
+        fab:menu_labels_textSize="14sp"
+        fab:menu_openDirection="up"
         fab:menu_shadowColor="#66000000"
         fab:menu_shadowRadius="4dp"
         fab:menu_shadowXOffset="1dp"
         fab:menu_shadowYOffset="3dp"
-        fab:menu_colorNormal="#DA4336"
-        fab:menu_colorPressed="#E75043"
-        fab:menu_colorRipple="#99FFFFFF"
-        fab:menu_animationDelayPerItem="50"
-        fab:menu_icon="@drawable/fab_add"
-        fab:menu_buttonSpacing="0dp"
-        fab:menu_labels_margin="0dp"
-        fab:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
-        fab:menu_labels_hideAnimation="@anim/fab_slide_out_to_right"
-        fab:menu_labels_paddingTop="4dp"
-        fab:menu_labels_paddingRight="8dp"
-        fab:menu_labels_paddingBottom="4dp"
-        fab:menu_labels_paddingLeft="8dp"
-        fab:menu_labels_padding="8dp"
-        fab:menu_labels_textColor="#FFFFFF"
-        fab:menu_labels_textSize="14sp"
-        fab:menu_labels_cornerRadius="3dp"
-        fab:menu_labels_colorNormal="#333333"
-        fab:menu_labels_colorPressed="#444444"
-        fab:menu_labels_colorRipple="#66FFFFFF"
-        fab:menu_labels_showShadow="true"
-        fab:menu_labels_singleLine="false"
-        fab:menu_labels_ellipsize="none"
-        fab:menu_labels_maxLines="-1"
-        fab:menu_labels_position="left"
-        fab:menu_openDirection="up"
-        fab:menu_backgroundColor="@android:color/transparent"
-        fab:menu_fab_label="your_label_here"
-        fab:menu_fab_show_animation="@anim/show_from_bottom"
-        fab:menu_fab_hide_animation="@anim/hide_to_bottom">
+        fab:menu_showShadow="true">
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/menu_mood_cow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_menu_share"
-            fab:fab_size="mini"
-            fab:fab_label="Blöde Kuh!" />
+            android:src="@mipmap/ic_kuh"
+            fab:fab_label="Blöde Kuh!"
+            fab:fab_size="normal" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/menu_mood_explode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_menu_share"
-            fab:fab_size="mini"
-            fab:fab_label="Boom!" />
+            android:src="@mipmap/ic_atompilz_round"
+            fab:fab_label="Boom!"
+            fab:fab_size="normal" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/menu_mood_sad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_menu_share"
-            fab:fab_size="mini"
-            fab:fab_label=":(" />
+            android:src="@mipmap/ic_pinguin"
+            fab:fab_label=":("
+            fab:fab_size="normal" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/menu_mood_shit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_menu_share"
-            fab:fab_size="mini"
-            fab:fab_label="Kacke!" />
+            android:src="@mipmap/ic_haufen"
+            fab:fab_label="Kacke!"
+            fab:fab_size="normal" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/menu_mood_unicorn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_menu_share"
-            fab:fab_size="mini"
-            fab:fab_label="-" />
+            android:src="@mipmap/ic_unicorn"
+            fab:fab_label="-"
+            fab:fab_size="normal" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/menu_mood_angry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_menu_share"
-            fab:fab_size="mini"
-            fab:fab_label="Wut!" />
+            android:src="@mipmap/ic_bat"
+            fab:fab_label="Wut!"
+            fab:fab_size="normal" />
 
     </com.github.clans.fab.FloatingActionMenu>
 
 </RelativeLayout>
+    <!--
+         <Button
+             android:id="@+id/sendButton"
+             style="@style/Widget.AppCompat.Button.Colored"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_horizontal"
+             android:background="@color/MetallicSeaweed"
+             android:text="@string/save_button"
+             android:textColor="@color/WhiteSmoke"
+             android:layout_alignBottom="@+id/menu"
+             android:layout_toStartOf="@+id/menu"
+         android:layout_marginEnd="21dp"/>
+
+         <LinearLayout
+             android:id="@+id/linearLayout"
+             android:layout_width="wrap_content"
+             android:layout_height="70dp"
+             android:weightSum="6"
+             android:layout_above="@+id/sendButton"
+             android:layout_alignParentStart="true">
+
+             <ImageButton
+                 android:id="@+id/button_cow"
+                 android:layout_width="60dp"
+                 android:layout_height="60dp"
+                 android:layout_weight="1"
+                 android:background="@android:color/transparent"
+                 android:scaleType="fitCenter"
+                 app:srcCompat="@mipmap/ic_kuh"/>
+
+             <ImageButton
+                 android:id="@+id/button_explosion"
+                 android:layout_width="60dp"
+                 android:layout_height="60dp"
+                 android:layout_weight="1"
+                 android:background="@android:color/transparent"
+                 android:scaleType="fitCenter"
+                 app:srcCompat="@mipmap/ic_atompilz"/>
+
+             <ImageButton
+                 android:id="@+id/button_penguin"
+                 android:layout_width="60dp"
+                 android:layout_height="60dp"
+                 android:layout_weight="1"
+                 android:background="@android:color/transparent"
+                 android:scaleType="fitCenter"
+                 app:srcCompat="@mipmap/ic_pinguin"/>
+
+             <ImageButton
+                 android:id="@+id/button_shit"
+                 android:layout_width="60dp"
+                 android:layout_height="60dp"
+                 android:layout_weight="1"
+                 android:background="@android:color/transparent"
+                 android:scaleType="fitCenter"
+                 app:srcCompat="@mipmap/ic_haufen"/>
+
+             <ImageButton
+                 android:id="@+id/button_unicorn"
+                 android:layout_width="60dp"
+                 android:layout_height="60dp"
+                 android:layout_weight="1"
+                 android:background="@android:color/transparent"
+                 android:contentDescription="kotzendes Einhorn"
+                 android:scaleType="fitCenter"
+                 app:srcCompat="@mipmap/ic_unicorn"/>
+
+             <ImageButton
+                 android:id="@+id/button_bat"
+                 android:layout_width="60dp"
+                 android:layout_height="60dp"
+                 android:layout_weight="1"
+                 android:background="@android:color/transparent"
+                 android:scaleType="fitCenter"
+                 app:srcCompat="@mipmap/ic_bat"/>
+         </LinearLayout>
+           -->

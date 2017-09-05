@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.View;
-import android.widget.Toast;
 
 // https://github.com/apl-devs/AppIntro
 import com.github.paolorotolo.appintro.AppIntro2;
@@ -45,7 +44,7 @@ public final class ActivityIntroSlides extends AppIntro2 {
 
 
     private void loadMainActivity(){
-        Intent intent = new Intent(this, ActivityStartScreen.class);
+        Intent intent = new Intent(this, ActivitySelectorAndStartScreen.class);
         startActivity(intent);
     }
 

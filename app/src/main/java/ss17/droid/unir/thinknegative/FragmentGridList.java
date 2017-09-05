@@ -80,10 +80,19 @@ public class FragmentGridList extends Fragment {
         }
         adapter.notifyDataSetChanged();
 
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                //DATA IS NOT BEING SENT YET!!!
+                Intent next = new Intent(getActivity().getApplicationContext(),ActivityGridItem.class);
+                startActivityForResult(next,0);
+            }
+        });
+
         gridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, final int position, long id) {
-                CharSequence[] items = {"Unused button", "Delete"};
+                CharSequence[] items = {"Open", "Delete"};
                 AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
 
                 dialog.setTitle("Choose an action");
@@ -91,7 +100,7 @@ public class FragmentGridList extends Fragment {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int item) {
                         if (item == 0){
-                            //UPDATE
+                            //OPEN ON LONG PRESS; SAME AS SET ON CLICK LISTENER
                             Toast.makeText(getActivity().getApplicationContext(),"not implemented yet...",Toast.LENGTH_SHORT)
                                     .show();
                         }
@@ -113,6 +122,7 @@ public class FragmentGridList extends Fragment {
 
         return v;
     }
+
 
     @SuppressWarnings("deprecation")
     private void showDialogDelete(final int idDBList){
@@ -143,7 +153,6 @@ public class FragmentGridList extends Fragment {
         });
         dialogDelete.show();
     }
-
     private void updateDBList() {
         Cursor cursor = FragmentHome.sqLiteHelper.getData("SELECT * FROM DBLIST");
         list.clear();
