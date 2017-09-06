@@ -56,6 +56,7 @@ public class FragmentHome extends Fragment {
     //for camera usage
     private static final int REQUEST_GALLERY_CODE = 999;
     private static final int CAMERA_REQUEST = 1888;
+    private static final String DB_NAME = "ListDB.sqlite";
 
     public FragmentHome() {
         // Required empty public constructor
@@ -77,11 +78,10 @@ public class FragmentHome extends Fragment {
         initFAB(v);
         initUI(v);
 
-        sqLiteHelper = new SQLiteHelper(getActivity().getApplicationContext(), "ListDB.sqlite",null,1);
+        sqLiteHelper = new SQLiteHelper(getActivity().getApplicationContext(), DB_NAME,null,1);
         sqLiteHelper.queryData("CREATE TABLE IF NOT EXISTS DBLIST(Id INTEGER PRIMARY KEY AUTOINCREMENT, title VARCHAR, content VARCHAR, image BLOB, mood DOUBLE)");
 
         setDate();
-
         return v;
     }
 
@@ -120,26 +120,7 @@ public class FragmentHome extends Fragment {
         mFAM = v.findViewById(R.id.menu);
         mFAM.setClosedOnTouchOutside(true);
 
-        fabUnicorn = v.findViewById(R.id.menu_mood_unicorn);
-        fabUnicorn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                moodSelected = 5;
-                saveContentToDB(v);
-                mFAM.close(true);
-            }
-        });
-        ;
 
-        fabBat = v.findViewById(R.id.menu_mood_angry);
-        fabBat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                moodSelected = 6;
-                saveContentToDB(v);
-                mFAM.close(true);
-            }
-        });
 
         fabCow = v.findViewById(R.id.menu_mood_cow);
         fabCow.setOnClickListener(new View.OnClickListener() {
@@ -181,11 +162,32 @@ public class FragmentHome extends Fragment {
             }
         });
 
+        fabUnicorn = v.findViewById(R.id.menu_mood_unicorn);
+        fabUnicorn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moodSelected = 5;
+                saveContentToDB(v);
+                mFAM.close(true);
+            }
+        });
+        ;
+
+        fabBat = v.findViewById(R.id.menu_mood_angry);
+        fabBat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moodSelected = 6;
+                saveContentToDB(v);
+                mFAM.close(true);
+            }
+        });
+
     }
 
     private void setDate() {
         Calendar c = Calendar.getInstance();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd. MMMM yy", Locale.GERMANY);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd. MMMM yy ", Locale.GERMANY);
         String dateString = sdf.format(c.getTime());
         view_date.setText(dateString);
     }

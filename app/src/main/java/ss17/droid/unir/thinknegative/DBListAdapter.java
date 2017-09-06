@@ -63,7 +63,7 @@ public class DBListAdapter extends BaseAdapter{
         if(row==null){
             //LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             //row = inflater.inflate(layout, null);
-            row= LayoutInflater.from(context).inflate(R.layout.fragment_calendar_customgridview,viewGroup,false);
+            row = LayoutInflater.from(context).inflate(R.layout.fragment_calendar_customgridview,viewGroup,false);
             holder.txtTitle = row.findViewById(R.id.textTitle);
             holder.txtContent = row.findViewById(R.id.textContent);
             holder.imageView = row.findViewById(R.id.imageDB);
@@ -82,7 +82,6 @@ public class DBListAdapter extends BaseAdapter{
 
         byte[] dblistImage = dbList.getImage();
         Bitmap bitmap = BitmapFactory.decodeByteArray(dblistImage, 0, dblistImage.length);
-
         holder.imageView.setImageBitmap(bitmap);
 
         switch ((int)dbList.getMood()){
@@ -105,7 +104,6 @@ public class DBListAdapter extends BaseAdapter{
                 holder.imageMood.setImageResource(R.drawable.ic_bat_web);
                 break;
         }
-
         return row;
     }
 }

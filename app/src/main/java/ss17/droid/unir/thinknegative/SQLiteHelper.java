@@ -34,6 +34,7 @@ public class SQLiteHelper extends SQLiteOpenHelper{
         statement.bindDouble(4, mood);
 
         statement.executeInsert();
+        database.close();
 
     }
 
@@ -49,6 +50,8 @@ public class SQLiteHelper extends SQLiteOpenHelper{
         statement.execute();
         database.close();
     }
+
+
     public Cursor getData(String sql){
         SQLiteDatabase database = getReadableDatabase();
         return database.rawQuery(sql,null);

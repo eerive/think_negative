@@ -34,6 +34,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -66,8 +68,9 @@ public class FragmentGridList extends Fragment {
 
 
 
-        //get data from sqlite
-        Cursor cursor = FragmentHome.sqLiteHelper.getData("SELECT * FROM DBLIST ORDER BY Id DESC");
+        //get data from sqlite ORDER BY Id DESC
+        //TODO: Order by Id DESC will result in a deletion error!!!
+        Cursor cursor = FragmentHome.sqLiteHelper.getData("SELECT * FROM DBLIST");
         list.clear();
         while (cursor.moveToNext()){
             int id = cursor.getInt(0);
@@ -82,10 +85,18 @@ public class FragmentGridList extends Fragment {
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //DATA IS NOT BEING SENT YET!!!
-                Intent next = new Intent(getActivity().getApplicationContext(),ActivityGridItem.class);
-                startActivityForResult(next,0);
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Cursor c = FragmentHome.sqLiteHelper.getData("SELECT id FROM DBLIST");
+                ArrayList<Integer> arrID = new ArrayList<Integer>();
+                while (c.moveToNext()){
+                    arrID.add(c.getInt(0));
+                }
+                int pickedID = arrID.get(position);
+                //TODO: DEBUG TOAST
+                Toast.makeText(getActivity().getApplicationContext(), "ID " + pickedID + " picked\n" + "Position " + position, Toast.LENGTH_SHORT).show();
+
+                openActivityWithSelectedContent(position);
+
             }
         });
 
@@ -100,9 +111,12 @@ public class FragmentGridList extends Fragment {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int item) {
                         if (item == 0){
-                            //OPEN ON LONG PRESS; SAME AS SET ON CLICK LISTENER
-                            Toast.makeText(getActivity().getApplicationContext(),"not implemented yet...",Toast.LENGTH_SHORT)
-                                    .show();
+                            Cursor c = FragmentHome.sqLiteHelper.getData("SELECT id FROM DBLIST");
+                            ArrayList<Integer> arrID = new ArrayList<Integer>();
+                            while (c.moveToNext()){
+                                arrID.add(c.getInt(0));
+                            }
+                            openActivityWithSelectedContent(position);
                         }
                         else{
                             //DELETE
@@ -111,7 +125,7 @@ public class FragmentGridList extends Fragment {
                             while (c.moveToNext()){
                                 arrID.add(c.getInt(0));
                             }
-                            showDialogDelete(arrID.get(position));
+                            showDialogDelete(arrID.get(position)); //TODO: CURRENTLY DELETES POSITION; WHICH RESULTS IN A BUG WHEN ORDERED BY ID ETC
                         }
                     }
                 });
@@ -121,6 +135,20 @@ public class FragmentGridList extends Fragment {
         });
 
         return v;
+    }
+
+    private void openActivityWithSelectedContent(final int position) {
+        Intent pushDataToActivity = new Intent(getActivity(), ActivityGridItem.class);
+        Bundle dataBundle = new Bundle();
+        DBList clickedObject = list.get(position);
+
+        dataBundle.putString("result_date_title",clickedObject.getTitle());
+        dataBundle.putString("result_content",clickedObject.getContent());
+        dataBundle.putByteArray("result_imageview",clickedObject.getImage());
+
+        pushDataToActivity.putExtras(dataBundle);
+
+        startActivity(pushDataToActivity);
     }
 
 
@@ -153,6 +181,8 @@ public class FragmentGridList extends Fragment {
         });
         dialogDelete.show();
     }
+
+
     private void updateDBList() {
         Cursor cursor = FragmentHome.sqLiteHelper.getData("SELECT * FROM DBLIST");
         list.clear();

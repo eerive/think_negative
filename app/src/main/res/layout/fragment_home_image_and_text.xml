@@ -5,12 +5,14 @@
     android:layout_height="match_parent"
     android:background="@color/WhiteSmoke">
 
+    <!-- Don't delete the src for now -->
     <ImageView
         android:id="@+id/fotoView"
         android:layout_width="match_parent"
         android:layout_height="230dp"
         android:adjustViewBounds="true"
         android:background="@drawable/image_add_wallpaper"
+        android:src="@drawable/base_transparent_square"
         android:contentDescription="@string/description_take_photo_field" />
 
 

@@ -1,13 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/result_imageview"
+        android:layout_width="match_parent"
+        android:layout_height="245dp"
+        app:srcCompat="@drawable/base_transparent_square"
+        android:contentDescription="Image from DB" />
+
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/result_date_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
-        android:text="not implemented yet"
-        android:textAlignment="center" />
-</LinearLayout>
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:text="Date"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/result_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/result_date_title"
+        android:layout_marginTop="14dp"
+        android:text="Content"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+
+</RelativeLayout>
