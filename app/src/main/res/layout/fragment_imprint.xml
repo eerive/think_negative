@@ -12,7 +12,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="90dp"
-        android:text="Impressum"
+        android:text="@string/impressum"
+        android:textAlignment="center"
         android:textAppearance="@android:style/TextAppearance.Material.Title" />
 
     <TextView
@@ -21,8 +22,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/imprint"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="78dp"
-        android:text="Idee: Minh Duc Lam, Daniela Krapf, Anne Köthke"
+        android:layout_marginTop="40dp"
+        android:padding="10dp"
+        android:text="@string/impressum_idea"
+        android:textAlignment="center"
         android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
     <TextView
@@ -31,16 +34,20 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/coding"
         android:layout_centerHorizontal="true"
-        android:text="Design Emoticons: Daniela Krapf"
+        android:padding="10dp"
+        android:text="@string/design_idea"
+        android:textAlignment="center"
         android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
     <TextView
         android:id="@+id/coding"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Coding: siehe oben"
+        android:text="@string/impressum_coding"
         android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        android:padding="10dp"
         android:layout_below="@+id/idea"
+        android:textAlignment="center"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -49,7 +56,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/database"
         android:layout_centerHorizontal="true"
-        android:text="Irgendein tiefsinniger Scheiß hier unten noch"
+        android:padding="10dp"
+        android:text="@string/impressum_info"
+        android:textAlignment="center"
         android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
     <TextView
@@ -58,7 +67,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/design_emote"
         android:layout_centerHorizontal="true"
-        android:text="Datenbank: Anne Köthke"
+        android:padding="10dp"
+        android:text="@string/impressum_datenbank"
+        android:textAlignment="center"
         android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
 

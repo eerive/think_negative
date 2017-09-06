@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-//SOURCE:https://www.simplifiedcoding.net/intro-screen-slider-android-tutorial/
+//SOURCE:https://www.simplifiedcoding.net/intro-screen-slider-android-tutorial
 public class FragmentIntroSlide extends Fragment {
 
     private static final String ARG_LAYOUT_RES_ID = "layoutResId";

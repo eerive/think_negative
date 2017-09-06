@@ -2,6 +2,7 @@
 
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 xmlns:fab="http://schemas.android.com/apk/res-auto"
@@ -16,12 +17,10 @@
         <!--https://developer.android.com/training/appbar/setting-up.html
             Für die Initialisierung der Toolbar in der Activity-->
 
-    <!--android:layout_below="@+id/my_toolbar"
-                    android:layout_weight="0.09"-->
-
+    <!-- includes the frame layout, with photo, date and text inputfield  -->
     <include layout="@layout/fragment_home_image_and_text"/>
 
-
+    <!--Source: https://github.com/Clans/FloatingActionButton, adapted-->
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/menu"
         android:layout_width="match_parent"
@@ -71,7 +70,7 @@
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_kuh_round"
             fab:fab_colorNormal="@color/MetallicSeaweed"
-            fab:fab_label="Blöde Kuh!"
+            fab:fab_label="@string/cow_description"
             fab:fab_size="normal" />
 
         <com.github.clans.fab.FloatingActionButton
@@ -80,7 +79,7 @@
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_atompilz_round"
             fab:fab_colorNormal="@color/MetallicSeaweed"
-            fab:fab_label="Boom!"
+            fab:fab_label="@string/explosion_description"
             fab:fab_size="normal" />
 
         <com.github.clans.fab.FloatingActionButton
@@ -89,7 +88,7 @@
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_pinguin_round"
             fab:fab_colorNormal="@color/MetallicSeaweed"
-            fab:fab_label=":("
+            fab:fab_label="@string/penguin_description"
             fab:fab_size="normal" />
 
         <com.github.clans.fab.FloatingActionButton
@@ -98,7 +97,7 @@
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_haufen_round"
             fab:fab_colorNormal="@color/MetallicSeaweed"
-            fab:fab_label="Kacke!"
+            fab:fab_label="@string/shit_description"
             fab:fab_size="normal" />
 
         <com.github.clans.fab.FloatingActionButton
@@ -107,7 +106,7 @@
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_unicorn_round"
             fab:fab_colorNormal="@color/MetallicSeaweed"
-            fab:fab_label="too sweet"
+            fab:fab_label="@string/unicorn_description"
             fab:fab_size="normal" />
 
         <com.github.clans.fab.FloatingActionButton
@@ -116,87 +115,9 @@
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_bat_round"
             fab:fab_colorNormal="@color/MetallicSeaweed"
-            fab:fab_label="Grrrr!"
+            fab:fab_label="@string/bat_description"
             fab:fab_size="normal"/>
 
     </com.github.clans.fab.FloatingActionMenu>
 
 </RelativeLayout>
-    <!--
-         <Button
-             android:id="@+id/sendButton"
-             style="@style/Widget.AppCompat.Button.Colored"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_gravity="center_horizontal"
-             android:background="@color/MetallicSeaweed"
-             android:text="@string/save_button"
-             android:textColor="@color/WhiteSmoke"
-             android:layout_alignBottom="@+id/menu"
-             android:layout_toStartOf="@+id/menu"
-         android:layout_marginEnd="21dp"/>
-
-         <LinearLayout
-             android:id="@+id/linearLayout"
-             android:layout_width="wrap_content"
-             android:layout_height="70dp"
-             android:weightSum="6"
-             android:layout_above="@+id/sendButton"
-             android:layout_alignParentStart="true">
-
-             <ImageButton
-                 android:id="@+id/button_cow"
-                 android:layout_width="60dp"
-                 android:layout_height="60dp"
-                 android:layout_weight="1"
-                 android:background="@android:color/transparent"
-                 android:scaleType="fitCenter"
-                 app:srcCompat="@mipmap/ic_kuh"/>
-
-             <ImageButton
-                 android:id="@+id/button_explosion"
-                 android:layout_width="60dp"
-                 android:layout_height="60dp"
-                 android:layout_weight="1"
-                 android:background="@android:color/transparent"
-                 android:scaleType="fitCenter"
-                 app:srcCompat="@mipmap/ic_atompilz"/>
-
-             <ImageButton
-                 android:id="@+id/button_penguin"
-                 android:layout_width="60dp"
-                 android:layout_height="60dp"
-                 android:layout_weight="1"
-                 android:background="@android:color/transparent"
-                 android:scaleType="fitCenter"
-                 app:srcCompat="@mipmap/ic_pinguin"/>
-
-             <ImageButton
-                 android:id="@+id/button_shit"
-                 android:layout_width="60dp"
-                 android:layout_height="60dp"
-                 android:layout_weight="1"
-                 android:background="@android:color/transparent"
-                 android:scaleType="fitCenter"
-                 app:srcCompat="@mipmap/ic_haufen"/>
-
-             <ImageButton
-                 android:id="@+id/button_unicorn"
-                 android:layout_width="60dp"
-                 android:layout_height="60dp"
-                 android:layout_weight="1"
-                 android:background="@android:color/transparent"
-                 android:contentDescription="kotzendes Einhorn"
-                 android:scaleType="fitCenter"
-                 app:srcCompat="@mipmap/ic_unicorn"/>
-
-             <ImageButton
-                 android:id="@+id/button_bat"
-                 android:layout_width="60dp"
-                 android:layout_height="60dp"
-                 android:layout_weight="1"
-                 android:background="@android:color/transparent"
-                 android:scaleType="fitCenter"
-                 app:srcCompat="@mipmap/ic_bat"/>
-         </LinearLayout>
-           -->

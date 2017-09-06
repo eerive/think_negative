@@ -17,7 +17,7 @@
         android:textColor="#ffffff"
         android:paddingRight="32dp"
         android:textSize="28sp"
-        android:text="Permission-Abfrage"/>
+        android:text="@string/headline_slide3"/>
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -43,8 +43,8 @@
         android:textColor="#ffffff"
         android:paddingLeft="64dp"
         android:paddingRight="64dp"
-        android:textSize="16sp"
-        android:text="Es werden zwei Permissions abgefragt.\nCAMERA_PERMISSION\nWRITE_EXTERNAL_STORAGE\nDrücken auf den Pfeil für die Abfrage"/>
+        android:textSize="18sp"
+        android:text="@string/text_slide3"/>
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="64dp" />

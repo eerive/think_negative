@@ -16,14 +16,31 @@
     <string name="nav_header_content">HEADER</string>
 
     <!-- -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_calendar">CalendarActivity</string>
     <string name="nav_home">Home</string>
     <string name="nav_test1">Test1</string>
-    <string name="fm_intro1_title">Willkommen bei  Think Negative!</string>
-    <string name="fm_intro1_body">Dieses Intro zeigt dir die wichtigsten Informationen für diese App und fragt die benötigten Permissions ab!  Lass uns beginnen! \n\n Dazu auf den Weiter Knopf drücken!</string>
-    <string name="fm_intro2_title">Was genau kann ich mit dieser App machen?</string>
-    <string name="long_description_here">Füg ein Foto, einen Titel und paar Worte hinzu.\n Du willst einen Eintrag löschen? Dann zum Calendar,\n und lang gedrückt halten und Delete auswählen :)</string>
+    <string name="fm_intro1_title">Think Negative!</string>
+    <string name="fm_intro1_body">Schluss mit \"Es könnte schlimmer sein\", \"Stell dich nicht so an\" und \"Du musst das positiv sehen\"! \n\n Lass deine schlechten Gefühle einfach raus, diese App versteht dich.\n\nWas auch immer dich nervt, schreib es auf und speicher deine Laune. Wenns passt, mach meinetwegen auch noch ein Foto\n</string>
+    <string name="fm_intro2_title">Mir geht\'s scheiße, was soll ich mit dieser blöden App?!</string>
+    <string name="long_description_here"> Wenn du dir irgendwann alles anschauen willst, was dich so alles runterzieht, geh in die Übersicht und wälz dich in Selbstmitleid</string>
     <string name="think_negative">Think Negative!</string>
     <string name="nav_header_question">Heute schon gegrantelt?</string>
+    <string name="description_take_photo_field">Takes a photo</string>
+    <string name="cow_description">Blöde Kuh!</string>
+    <string name="explosion_description">Boom!</string>
+    <string name="penguin_description">:(</string>
+    <string name="shit_description">Kacke!</string>
+    <string name="unicorn_description">too sweet</string>
+    <string name="bat_description">Grrrr!</string>
+
+    <!--Strings Impressum-->
+    <string name="impressum">Impressum</string>
+    <string name="impressum_idea">Idee:\nMinh Duc Lam, Daniela Krapf, Anne Köthke</string>
+    <string name="design_idea">Design Emoticons:\nDaniela Krapf</string>
+    <string name="impressum_coding">Coding:\ndas Team</string>
+    <string name="impressum_datenbank">Datenbank:\nAnne Köthke</string>
+    <string name="impressum_info">Verwendung der App auf eigene Verantwortung Es wird keine Haftung für jegliche psychische Schäden übernommen\n\nRegensburg 2017</string>
+    <string name="headline_slide3">Erst machen, dann fragen...</string>
+    <string name="text_slide3">...funktioniert hier leider nicht. Gib uns erst die Erlaubnis für  DEINE KAMERA DEN SPEICHER DEINES HANDYS  Danach kanns losgehen</string>
+    <string name="headline_slide4">Auf eine schlechte Zeit!</string>
 </resources>

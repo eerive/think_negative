@@ -3,7 +3,6 @@ package ss17.droid.unir.thinknegative;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -19,12 +18,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.github.amlcurran.showcaseview.ShowcaseView;
-import com.github.amlcurran.showcaseview.targets.ViewTarget;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 
@@ -33,14 +29,13 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-import static android.content.Context.MODE_PRIVATE;
-
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class FragmentHome extends Fragment {
 
+    //Initialize member variables
 
     private FloatingActionButton fabUnicorn;
     private FloatingActionButton fabBat;
@@ -54,11 +49,11 @@ public class FragmentHome extends Fragment {
     //depending on the picture selected, moodSelected is set
     private double moodSelected = 0;
 
-
     private EditText edtContent;
     private ImageView mImageView;
     private TextView view_date;
 
+    //for camera usage
     private static final int REQUEST_GALLERY_CODE = 999;
     private static final int CAMERA_REQUEST = 1888;
 
@@ -75,24 +70,17 @@ public class FragmentHome extends Fragment {
     public static SQLiteHelper sqLiteHelper;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         final View v = inflater.inflate(R.layout.fragment_home, container, false);
 
         initFAB(v);
-        initValues(v);
+        initUI(v);
 
         sqLiteHelper = new SQLiteHelper(getActivity().getApplicationContext(), "ListDB.sqlite",null,1);
         sqLiteHelper.queryData("CREATE TABLE IF NOT EXISTS DBLIST(Id INTEGER PRIMARY KEY AUTOINCREMENT, title VARCHAR, content VARCHAR, image BLOB, mood DOUBLE)");
 
         setDate();
-        mImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(cameraIntent, CAMERA_REQUEST);
-            }
-        });
 
         return v;
     }
@@ -131,6 +119,7 @@ public class FragmentHome extends Fragment {
     private void initFAB(final View v) {
         mFAM = v.findViewById(R.id.menu);
         mFAM.setClosedOnTouchOutside(true);
+
         fabUnicorn = v.findViewById(R.id.menu_mood_unicorn);
         fabUnicorn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -208,6 +197,7 @@ public class FragmentHome extends Fragment {
         return stream.toByteArray();
     }
 
+    //If permission is granted, ?
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults){
         if(requestCode == REQUEST_GALLERY_CODE){
@@ -223,6 +213,8 @@ public class FragmentHome extends Fragment {
         }
         super.onRequestPermissionsResult(requestCode,permissions,grantResults);
     }
+
+    //if camera took a picture, compress this picture and execute the super-Method
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         if(requestCode == CAMERA_REQUEST){
@@ -242,10 +234,17 @@ public class FragmentHome extends Fragment {
         super.onActivityResult(requestCode,resultCode,data);
     }
 
-    private void initValues(View v) {
+    private void initUI(View v) {
         mImageView = v.findViewById(R.id.fotoView);
         view_date = v.findViewById(R.id.view_today);
         edtContent = v.findViewById(R.id.input_content);
-
+        mImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(cameraIntent, CAMERA_REQUEST);
+            }
+        });
     }
+
 }
