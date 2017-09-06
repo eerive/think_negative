@@ -17,7 +17,7 @@
         android:textColor="#ffffff"
         android:paddingRight="32dp"
         android:textSize="28sp"
-        android:text="Vielen Dank für dein Vertrauen!"/>
+        android:text="@string/headline_slide4"/>
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -48,9 +48,5 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:text="Tippe auf den Pfeil, um zu starten!"/>
-    <!--
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="64dp" />
-    -->
+    
 </LinearLayout>
