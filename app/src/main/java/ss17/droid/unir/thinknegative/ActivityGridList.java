@@ -18,7 +18,11 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  * empty
@@ -45,6 +49,16 @@ public class ActivityGridList extends AppCompatActivity {
         if(getSupportActionBar() != null){ //To counter Nullpo
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
+
+        //get date of field clicked on
+        Intent intent = getIntent();
+        Bundle b = intent.getExtras();
+        Date d = (Date) b.get(CaldroidFragmentView.DATE_EXTRA);
+
+        String date = formatDate(d);
+        Toast.makeText(this, date, Toast.LENGTH_SHORT).show();
+
+
 
 
         Cursor cursor = FragmentHome.sqLiteHelper.getData("SELECT * FROM DBLIST ORDER BY Id DESC");
@@ -113,6 +127,11 @@ public class ActivityGridList extends AppCompatActivity {
 
     }
 
+    private String formatDate(Date d) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd. MMMM yy ", Locale.GERMANY);
+        String dateString = sdf.format(d);
+        return dateString;
+    }
 
     private void openActivityWithSelectedContent(final int position) {
         Intent pushDataToActivity = new Intent(this, ActivityGridItem.class);

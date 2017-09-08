@@ -1,5 +1,6 @@
 package ss17.droid.unir.thinknegative;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -25,6 +26,8 @@ import java.util.Locale;
  */
 
 public class CaldroidFragmentView extends Fragment {
+
+    public static final String DATE_EXTRA = "date";
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,8 +66,9 @@ public class CaldroidFragmentView extends Fragment {
 
         @Override
         public void onSelectDate(Date date, View view) {
-            Toast.makeText(getActivity().getApplicationContext(), formatter.format(date),
-                    Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getActivity().getApplicationContext(), ActivityGridList.class);
+            intent.putExtra(DATE_EXTRA, date);
+            startActivity(intent);
         }
 
         @Override
