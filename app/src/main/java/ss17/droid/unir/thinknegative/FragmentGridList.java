@@ -70,7 +70,7 @@ public class FragmentGridList extends Fragment {
 
         //get data from sqlite ORDER BY Id DESC
         //TODO: Order by Id DESC will result in a deletion error!!!
-        Cursor cursor = FragmentHome.sqLiteHelper.getData("SELECT * FROM DBLIST");
+        Cursor cursor = FragmentHome.sqLiteHelper.getData("SELECT * FROM DBLIST ORDER BY Id DESC");
         list.clear();
         while (cursor.moveToNext()){
             int id = cursor.getInt(0);
@@ -120,7 +120,7 @@ public class FragmentGridList extends Fragment {
                         }
                         else{
                             //DELETE
-                            Cursor c = FragmentHome.sqLiteHelper.getData("SELECT id FROM DBLIST");
+                            Cursor c = FragmentHome.sqLiteHelper.getData("SELECT id FROM DBLIST ORDER BY Id DESC");
                             ArrayList<Integer> arrID = new ArrayList<Integer>();
                             while (c.moveToNext()){
                                 arrID.add(c.getInt(0));
@@ -184,7 +184,7 @@ public class FragmentGridList extends Fragment {
 
 
     private void updateDBList() {
-        Cursor cursor = FragmentHome.sqLiteHelper.getData("SELECT * FROM DBLIST");
+        Cursor cursor = FragmentHome.sqLiteHelper.getData("SELECT * FROM DBLIST ORDER BY id DESC");
         list.clear();
         while (cursor.moveToNext()){
             int id = cursor.getInt(0);
