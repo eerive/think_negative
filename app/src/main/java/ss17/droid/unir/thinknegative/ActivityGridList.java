@@ -58,11 +58,10 @@ public class ActivityGridList extends AppCompatActivity {
         String date = formatDate(d);
         Toast.makeText(this, date, Toast.LENGTH_SHORT).show();
 
-
-
-
-        Cursor cursor = FragmentHome.sqLiteHelper.getData("SELECT * FROM DBLIST ORDER BY Id DESC");
+        Cursor cursor = FragmentHome.sqLiteHelper.getData("SELECT * FROM DBLIST WHERE title = '" + date + "' ORDER BY Id DESC");
         list.clear();
+        if (cursor.getCount()!=0) {
+
         while (cursor.moveToNext()){
             int id = cursor.getInt(0);
             String title = cursor.getString(1);
@@ -125,8 +124,14 @@ public class ActivityGridList extends AppCompatActivity {
             }
         });
 
+
+        } else {
+            Toast.makeText(this, "no entry", Toast.LENGTH_SHORT).show();
+            finish();
+        }
     }
 
+    //prepare date from intent, so that it can be compared with database
     private String formatDate(Date d) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd. MMMM yy ", Locale.GERMANY);
         String dateString = sdf.format(d);

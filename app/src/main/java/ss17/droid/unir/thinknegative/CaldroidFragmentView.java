@@ -74,22 +74,22 @@ public class CaldroidFragmentView extends Fragment {
         @Override
         public void onChangeMonth(int month, int year) {
             String text = "month: " + month + " year: " + year;
-            Toast.makeText(getActivity().getApplicationContext(), text,
-                    Toast.LENGTH_SHORT).show();
+            /*Toast.makeText(getActivity().getApplicationContext(), text,
+                    Toast.LENGTH_SHORT).show();*/
         }
 
         @Override
         public void onLongClickDate(Date date, View view) {
-            Toast.makeText(getActivity().getApplicationContext(),
+           /* Toast.makeText(getActivity().getApplicationContext(),
                     "Long click " + formatter.format(date),
-                    Toast.LENGTH_SHORT).show();
+                    Toast.LENGTH_SHORT).show();*/
         }
 
         @Override
         public void onCaldroidViewCreated() {
-            Toast.makeText(getActivity().getApplicationContext(),
+            /*Toast.makeText(getActivity().getApplicationContext(),
                     "Caldroid view is created",
-                    Toast.LENGTH_SHORT).show();
+                    Toast.LENGTH_SHORT).show();*/
         }
 
     };
