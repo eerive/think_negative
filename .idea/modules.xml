@@ -4,8 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ThinkNegative.iml" filepath="$PROJECT_DIR$/ThinkNegative.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/think_negative.iml" filepath="$PROJECT_DIR$/think_negative.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../../../../../Duc/Documents/MEI/ANDROID/SS17PROJ/ThinkNegative/think_negative.iml" filepath="$PROJECT_DIR$/../../../../../../../Duc/Documents/MEI/ANDROID/SS17PROJ/ThinkNegative/think_negative.iml" />
+      <module fileurl="file://C:\Duc\Documents\MEI\ANDROID\SS17PROJ\ThinkNegative\think_negative.iml" filepath="C:\Duc\Documents\MEI\ANDROID\SS17PROJ\ThinkNegative\think_negative.iml" />
+      <module fileurl="file://C:\Users\Duc\Documents\MEI\ANDROID\SS17PROJ\ThinkNegative\think_negative.iml" filepath="C:\Users\Duc\Documents\MEI\ANDROID\SS17PROJ\ThinkNegative\think_negative.iml" />
     </modules>
   </component>
 </project>

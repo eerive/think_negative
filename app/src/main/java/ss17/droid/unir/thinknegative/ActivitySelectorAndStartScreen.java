@@ -89,7 +89,6 @@ public class ActivitySelectorAndStartScreen extends AppCompatActivity  {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                         selectDrawerItem(menuItem);
-                        debugSelectMenu(menuItem);
                         return true;
                     }
                 });
@@ -131,15 +130,6 @@ public class ActivitySelectorAndStartScreen extends AppCompatActivity  {
         //Override currently loaded Fragment (and close Drawer when selected)
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
-        mDrawerLayout.closeDrawers();
-
-    }
-
-    public void debugSelectMenu(MenuItem menuItem){
-        if(menuItem.getItemId() == R.id.nav_activity_cal){
-                Intent intent = new Intent(this, ActivityGridList.class);
-                startActivity(intent);
-        }
         mDrawerLayout.closeDrawers();
 
     }

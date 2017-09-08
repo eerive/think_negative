@@ -56,77 +56,77 @@ public class ActivityGridList extends AppCompatActivity {
         Date d = (Date) b.get(CaldroidFragmentView.DATE_EXTRA);
 
         String date = formatDate(d);
-        Toast.makeText(this, date, Toast.LENGTH_SHORT).show();
+
+        //DEBUG TOAST
+        //Toast.makeText(this, date, Toast.LENGTH_SHORT).show();
 
         Cursor cursor = FragmentHome.sqLiteHelper.getData("SELECT * FROM DBLIST WHERE title = '" + date + "' ORDER BY Id DESC");
         list.clear();
         if (cursor.getCount()!=0) {
-
-        while (cursor.moveToNext()){
-            int id = cursor.getInt(0);
-            String title = cursor.getString(1);
-            String content = cursor.getString(2);
-            byte[] image = cursor.getBlob(3);
-            double mood = cursor.getDouble(4);
-
-            list.add(new DBList(id,title,content,image, mood));
-        }
-        adapter.notifyDataSetChanged();
-
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Cursor c = FragmentHome.sqLiteHelper.getData("SELECT id FROM DBLIST ORDER BY id DESC");
-                ArrayList<Integer> arrID = new ArrayList<Integer>();
-                while (c.moveToNext()){
-                    arrID.add(c.getInt(0));
-                }
-                int pickedID = arrID.get(position);
-                //TODO: DEBUG TOAST
-                Toast.makeText(getApplicationContext(), "ID " + pickedID + " picked\n" + "Position " + position, Toast.LENGTH_SHORT).show();
-
-                openActivityWithSelectedContent(position);
-
+            while (cursor.moveToNext()){
+                int id = cursor.getInt(0);
+                String title = cursor.getString(1);
+                String content = cursor.getString(2);
+                byte[] image = cursor.getBlob(3);
+                double mood = cursor.getDouble(4);
+                list.add(new DBList(id,title,content,image, mood));
             }
-        });
+            adapter.notifyDataSetChanged();
 
-        gridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, final int position, long id) {
-                CharSequence[] items = {"Open", "Delete"};
-                AlertDialog.Builder dialog = new AlertDialog.Builder(ActivityGridList.this);
-
-                dialog.setTitle("Choose an action");
-                dialog.setItems(items, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int item) {
-                        if (item == 0){
-                            Cursor c = FragmentHome.sqLiteHelper.getData("SELECT id FROM DBLIST");
-                            ArrayList<Integer> arrID = new ArrayList<Integer>();
-                            while (c.moveToNext()){
-                                arrID.add(c.getInt(0));
-                            }
-                            openActivityWithSelectedContent(position);
-                        }
-                        else{
-                            //DELETE
-                            Cursor c = FragmentHome.sqLiteHelper.getData("SELECT id FROM DBLIST ORDER BY Id DESC");
-                            ArrayList<Integer> arrID = new ArrayList<Integer>();
-                            while (c.moveToNext()){
-                                arrID.add(c.getInt(0));
-                            }
-                            showDialogDelete(arrID.get(position));
-                        }
+            gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                    Cursor c = FragmentHome.sqLiteHelper.getData("SELECT id FROM DBLIST ORDER BY id DESC");
+                    ArrayList<Integer> arrID = new ArrayList<Integer>();
+                    while (c.moveToNext()){
+                        arrID.add(c.getInt(0));
                     }
-                });
-                dialog.show();
-                return true;
-            }
-        });
+                    int pickedID = arrID.get(position);
+                    //TODO: DEBUG TOAST
+                    Toast.makeText(getApplicationContext(), "ID " + pickedID + " picked\n" + "Position " + position, Toast.LENGTH_SHORT).show();
+
+                    openActivityWithSelectedContent(position);
+
+                }
+            });
+
+            gridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                @Override
+                public boolean onItemLongClick(AdapterView<?> adapterView, View view, final int position, long id) {
+                    CharSequence[] items = {"Open", "Delete"};
+                    AlertDialog.Builder dialog = new AlertDialog.Builder(ActivityGridList.this);
+
+                    dialog.setTitle("Choose an action");
+                    dialog.setItems(items, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int item) {
+                            if (item == 0){
+                                Cursor c = FragmentHome.sqLiteHelper.getData("SELECT id FROM DBLIST");
+                                ArrayList<Integer> arrID = new ArrayList<Integer>();
+                                while (c.moveToNext()){
+                                    arrID.add(c.getInt(0));
+                                }
+                                openActivityWithSelectedContent(position);
+                            }
+                            else{
+                                //DELETE
+                                Cursor c = FragmentHome.sqLiteHelper.getData("SELECT id FROM DBLIST ORDER BY Id DESC");
+                                ArrayList<Integer> arrID = new ArrayList<Integer>();
+                                while (c.moveToNext()){
+                                    arrID.add(c.getInt(0));
+                                }
+                                showDialogDelete(arrID.get(position));
+                            }
+                        }
+                    });
+                    dialog.show();
+                    return true;
+                }
+            });
 
 
         } else {
-            Toast.makeText(this, "no entry", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Entry does not exist", Toast.LENGTH_SHORT).show();
             finish();
         }
     }
@@ -134,8 +134,7 @@ public class ActivityGridList extends AppCompatActivity {
     //prepare date from intent, so that it can be compared with database
     private String formatDate(Date d) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd. MMMM yy ", Locale.GERMANY);
-        String dateString = sdf.format(d);
-        return dateString;
+        return sdf.format(d);
     }
 
     private void openActivityWithSelectedContent(final int position) {
