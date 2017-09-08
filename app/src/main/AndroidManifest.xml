@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_atompilz_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivitySelectorAndStartScreen"></activity>
+        <activity android:name=".ActivitySelectorAndStartScreen">
+
+        </activity>
         <activity
             android:name=".ActivitySplashScreen"
             android:theme="@style/SplashScreenTheme">
@@ -35,7 +37,9 @@
                 android:value=".ActivitySelectorAndStartScreen"/>
         </activity>
 
-
+        <activity android:name=".ActivityGridList"
+            android:theme="@style/GridListActivity"
+            />
     </application>
 
 </manifest>

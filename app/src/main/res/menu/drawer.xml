@@ -15,4 +15,9 @@
         android:title="@string/nav_imprint"
         android:icon="@mipmap/ic_settings_black_24dp"
         />
+    <!-- TODO: DEBUG -->
+    <item
+        android:id="@+id/nav_activity_cal"
+        android:title="DEBUG: NAV_ACT"
+        />
 </menu>

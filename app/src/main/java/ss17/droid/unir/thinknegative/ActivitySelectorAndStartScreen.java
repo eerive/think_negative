@@ -14,6 +14,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -81,12 +82,14 @@ public class ActivitySelectorAndStartScreen extends AppCompatActivity  {
         }
     }
 
+
     private void initDrawerContent(NavigationView navigationView){
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                         selectDrawerItem(menuItem);
+                        debugSelectMenu(menuItem);
                         return true;
                     }
                 });
@@ -128,6 +131,15 @@ public class ActivitySelectorAndStartScreen extends AppCompatActivity  {
         //Override currently loaded Fragment (and close Drawer when selected)
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
+        mDrawerLayout.closeDrawers();
+
+    }
+
+    public void debugSelectMenu(MenuItem menuItem){
+        if(menuItem.getItemId() == R.id.nav_activity_cal){
+                Intent intent = new Intent(this, ActivityGridList.class);
+                startActivity(intent);
+        }
         mDrawerLayout.closeDrawers();
 
     }

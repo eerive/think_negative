@@ -3,7 +3,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/MetallicSeaweed</item>
-        <item name="colorPrimaryDark">@color/SeaBlue</item>
+        <item name="colorPrimaryDark">@color/MetallicSeaweed</item>
         <item name="colorAccent">@color/WhiteSmoke</item>
     </style>
 
@@ -22,7 +22,15 @@
 
     <style name="ImprintTheme" parent="Theme.AppCompat.NoActionBar" />
 
-    <style name="GridItemTheme" parent="Theme.AppCompat.Light.DarkActionBar" />
+    <style name="GridItemTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/MetallicSeaweed</item>
+        <item name="colorPrimaryDark">@color/MetallicSeaweed</item>
+    </style>
+
+    <style name="GridListActivity" parent="Theme.AppCompat.Light.DarkActionBar" >
+        <item name="colorPrimary">@color/MetallicSeaweed</item>
+        <item name="colorPrimaryDark">@color/MetallicSeaweed</item>
+    </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
