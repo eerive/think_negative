@@ -48,5 +48,5 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:text="Tippe auf den Pfeil, um zu starten!"/>
-    
+
 </LinearLayout>

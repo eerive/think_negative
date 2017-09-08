@@ -17,9 +17,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.github.amlcurran.showcaseview.ShowcaseView;
-import com.github.amlcurran.showcaseview.targets.ViewTarget;
-
 /**
  * <empty>
  */
@@ -116,7 +113,7 @@ public class ActivitySelectorAndStartScreen extends AppCompatActivity  {
                 fragmentClass = FragmentHome.class;
                 break;
             case R.id.nav_calendar:
-                fragmentClass = FragmentGridList.class;
+                fragmentClass = CaldroidFragmentView.class;
                 break;
             default:
                 fragmentClass = FragmentHome.class; //This can be changed?
