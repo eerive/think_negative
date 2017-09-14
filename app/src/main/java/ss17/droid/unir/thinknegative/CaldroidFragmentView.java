@@ -1,25 +1,22 @@
 package ss17.droid.unir.thinknegative;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
-import com.roomorama.caldroid.WeekdayArrayAdapter;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Formatter;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
@@ -30,6 +27,7 @@ import java.util.Locale;
 
 public class CaldroidFragmentView extends Fragment {
 
+    private ArrayList<DBList> list = new ArrayList<DBList>();
     public static final String DATE_EXTRA = "date";
     Button mHomeButton;
     private View v;
@@ -37,6 +35,7 @@ public class CaldroidFragmentView extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         String today = getCurrDate();
+        getEntries();
     }
 
     @Override
@@ -130,6 +129,34 @@ public class CaldroidFragmentView extends Fragment {
         String dateString = df.format(date.getTime());
         return dateString;
     }
+
+    private void getEntries() {
+        String sqlString = "SELECT * FROM DBLIST;";
+        Cursor cursor = FragmentHome.sqLiteHelper.getData(sqlString);
+        list.clear();
+        if (cursor.getCount() != 0) {
+            while (cursor.moveToNext()) {
+                int id = cursor.getInt(0);
+                String title = cursor.getString(1);
+                String content = cursor.getString(2);
+                byte[] image = cursor.getBlob(3);
+                double mood = cursor.getDouble(4);
+                list.add(new DBList(id, title, content, image, mood));
+            }
+            while (!list.isEmpty()) {
+                int size = list.size() - 1;
+                DBList currEntry = list.get(size);
+                String title = currEntry.getTitle();
+                // title muss noch zu Date gecastet werden!
+                Double mood = currEntry.getMood();
+                // mood muss noch auf das richtige Drawable verweisen!
+
+            }
+            //setBackgroundBlaBla (Drawable, Date)
+
+        }
+    }
+
 
 
 

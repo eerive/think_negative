@@ -61,4 +61,5 @@ public class DBList {
     public void setMood(double mood) {
         this.mood = mood;
     }
+
 }
