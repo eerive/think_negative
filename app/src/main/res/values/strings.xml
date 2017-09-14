@@ -12,13 +12,12 @@
 
     <string name="action_settings">Einstellungen</string>
     <string name="nav_imprint">Impressum</string>
-    <string name="to_calendar">Übersicht</string>
+    <string name="nav_home">Home</string>
+    <string name="to_calendar">Kalenderübersicht</string>
     <string name="nav_header_content">HEADER</string>
 
     <!-- -->
     <string name="title_activity_calendar">CalendarActivity</string>
-    <string name="nav_home">Home</string>
-    <string name="nav_test1">Test1</string>
     <string name="fm_intro1_title">Think Negative!</string>
     <string name="fm_intro1_body">Schluss mit \"Es könnte schlimmer sein\", \"Stell dich nicht so an\" und \"Du musst das positiv sehen\"! \n\n Lass deine schlechten Gefühle einfach raus, diese App versteht dich.\n\nWas auch immer dich nervt, schreib es auf und speicher deine Laune. Wenns passt, mach meinetwegen auch noch ein Foto\n</string>
     <string name="fm_intro2_title">Mir geht\'s scheiße, was soll ich mit dieser blöden App?!</string>
@@ -30,7 +29,7 @@
     <string name="explosion_description">Boom!</string>
     <string name="penguin_description">:(</string>
     <string name="shit_description">Kacke!</string>
-    <string name="unicorn_description">too sweet</string>
+    <string name="unicorn_description">Ich könnt kotzen</string>
     <string name="bat_description">Grrrr!</string>
 
     <!--Strings Impressum-->

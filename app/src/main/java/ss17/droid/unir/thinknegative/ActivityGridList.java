@@ -142,6 +142,7 @@ public class ActivityGridList extends AppCompatActivity {
         dataBundle.putString("result_date_title",clickedObject.getTitle());
         dataBundle.putString("result_content",clickedObject.getContent());
         dataBundle.putByteArray("result_imageview",clickedObject.getImage());
+        dataBundle.putDouble("result_mood", clickedObject.getMood());
 
         pushDataToActivity.putExtras(dataBundle);
 
