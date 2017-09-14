@@ -56,7 +56,6 @@ public class ActivityGridList extends AppCompatActivity {
         Date d = (Date) b.get(CaldroidFragmentView.DATE_EXTRA);
 
         String date = formatDate(d);
-        Toast.makeText(this, date, Toast.LENGTH_SHORT).show();
 
         Cursor cursor = FragmentHome.sqLiteHelper.getData("SELECT * FROM DBLIST WHERE title = '" + date + "' ORDER BY Id DESC");
         list.clear();

@@ -16,7 +16,16 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_weight="0.4">
-
     </FrameLayout>
+
+    <Button
+        android:id="@+id/backToHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+
+        android:background="@color/Azure"
+        android:text="@string/addNewEntry"/>
 
 </LinearLayout>
