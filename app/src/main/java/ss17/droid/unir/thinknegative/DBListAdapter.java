@@ -60,9 +60,8 @@ public class DBListAdapter extends BaseAdapter{
 
         View row = view;
         ViewHolder holder = new ViewHolder();
+
         if(row==null){
-            //LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            //row = inflater.inflate(layout, null);
             row = LayoutInflater.from(context).inflate(R.layout.fragment_calendar_customgridview,viewGroup,false);
             holder.txtTitle = row.findViewById(R.id.textTitle);
             holder.txtContent = row.findViewById(R.id.textContent);
