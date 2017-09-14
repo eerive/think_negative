@@ -3,9 +3,12 @@ package ss17.droid.unir.thinknegative;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.roomorama.caldroid.CaldroidFragment;
@@ -28,6 +31,8 @@ import java.util.Locale;
 public class CaldroidFragmentView extends Fragment {
 
     public static final String DATE_EXTRA = "date";
+    Button mHomeButton;
+    private View v;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,10 +40,12 @@ public class CaldroidFragmentView extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.fragment_calender_overview, container, false);
+
+
+        v = inflater.inflate(R.layout.fragment_calender_overview, container, false);
 
         CaldroidFragment caldroidFragment = new CaldroidFragment();
         Bundle args = new Bundle();
@@ -54,12 +61,30 @@ public class CaldroidFragmentView extends Fragment {
 
         caldroidFragment.setCaldroidListener(listener);
 
+        //get quickly from calendar view to input mask
+        mHomeButton = v.findViewById(R.id.backToHome);
+        mHomeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = null;
+
+                try {
+                    fragment = FragmentHome.class.newInstance();
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
+            }
+        });
 
         return v;
     }
 
 
-    //add abstract listener to caldroid - does nothing yet
+
+
+    //add abstract listener to caldroid
     final CaldroidListener listener = new CaldroidListener() {
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd MMM yyyy");
@@ -105,6 +130,7 @@ public class CaldroidFragmentView extends Fragment {
         String dateString = df.format(date.getTime());
         return dateString;
     }
+
 
 
 

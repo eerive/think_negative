@@ -39,8 +39,9 @@
     <string name="design_idea">Design Emoticons:\nDaniela Krapf</string>
     <string name="impressum_coding">Coding:\ndas Team</string>
     <string name="impressum_datenbank">Datenbank:\nAnne Köthke</string>
-    <string name="impressum_info">Verwendung der App auf eigene Verantwortung Es wird keine Haftung für jegliche psychische Schäden übernommen\n\nRegensburg 2017</string>
+    <string name="impressum_info">Verwendung der App auf eigene Verantwortung\. Es wird keine Haftung für jegliche psychische Schäden übernommen\.\n\nRegensburg 2017</string>
     <string name="headline_slide3">Erst machen, dann fragen...</string>
     <string name="text_slide3">...funktioniert hier leider nicht. Gib uns erst die Erlaubnis für  DEINE KAMERA DEN SPEICHER DEINES HANDYS  Danach kanns losgehen</string>
     <string name="headline_slide4">Auf eine schlechte Zeit!</string>
+    <string name="addNewEntry">Granteln!</string>
 </resources>
